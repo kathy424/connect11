@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html
+  style="--wcm-color-fg-1: rgb(20,20,20); --wcm-color-fg-2: rgb(121,134,134); --wcm-color-fg-3: rgb(158,169,169); --wcm-color-bg-1: rgb(255,255,255); --wcm-color-bg-2: rgb(241,243,243); --wcm-color-bg-3: rgb(228,231,231); --wcm-color-overlay: rgba(0,0,0,0.1); --wcm-accent-color: #3396FF; --wcm-accent-fill-color: #FFFFFF; --wcm-z-index: 89; --wcm-background-color: #3396FF; --wcm-background-border-radius: 8px; --wcm-container-border-radius: 30px; --wcm-wallet-icon-border-radius: 15px; --wcm-wallet-icon-large-border-radius: 30px; --wcm-wallet-icon-small-border-radius: 7px; --wcm-input-border-radius: 28px; --wcm-button-border-radius: 10px; --wcm-notification-border-radius: 36px; --wcm-secondary-button-border-radius: 28px; --wcm-icon-button-border-radius: 50%; --wcm-button-hover-highlight-border-radius: 10px; --wcm-text-big-bold-size: 20px; --wcm-text-big-bold-weight: 600; --wcm-text-big-bold-line-height: 24px; --wcm-text-big-bold-letter-spacing: -0.03em; --wcm-text-big-bold-text-transform: none; --wcm-text-xsmall-bold-size: 10px; --wcm-text-xsmall-bold-weight: 700; --wcm-text-xsmall-bold-line-height: 12px; --wcm-text-xsmall-bold-letter-spacing: 0.02em; --wcm-text-xsmall-bold-text-transform: uppercase; --wcm-text-xsmall-regular-size: 12px; --wcm-text-xsmall-regular-weight: 600; --wcm-text-xsmall-regular-line-height: 14px; --wcm-text-xsmall-regular-letter-spacing: -0.03em; --wcm-text-xsmall-regular-text-transform: none; --wcm-text-small-thin-size: 14px; --wcm-text-small-thin-weight: 500; --wcm-text-small-thin-line-height: 16px; --wcm-text-small-thin-letter-spacing: -0.03em; --wcm-text-small-thin-text-transform: none; --wcm-text-small-regular-size: 14px; --wcm-text-small-regular-weight: 600; --wcm-text-small-regular-line-height: 16px; --wcm-text-small-regular-letter-spacing: -0.03em; --wcm-text-small-regular-text-transform: none; --wcm-text-medium-regular-size: 16px; --wcm-text-medium-regular-weight: 600; --wcm-text-medium-regular-line-height: 20px; --wcm-text-medium-regular-letter-spacing: -0.03em; --wcm-text-medium-regular-text-transform: none; --wcm-font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', sans-serif; --wcm-font-feature-settings: 'tnum' on, 'lnum' on, 'case' on; --wcm-success-color: rgb(38,181,98); --wcm-error-color: rgb(242, 90, 103); --wcm-overlay-background-color: rgba(0, 0, 0, 0.3); --wcm-overlay-backdrop-filter: none;"
+  data-scrapbook-source="https://revert.finance/" data-scrapbook-create="20250311003926488"
+  data-scrapbook-adoptedstylesheet-0="*, ::after, ::before { margin: 0px; padding: 0px; box-sizing: border-box; font-style: normal; text-rendering: optimizespeed; -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: transparent; backface-visibility: hidden; }
+
+button { cursor: pointer; display: flex; justify-content: center; align-items: center; position: relative; border: none; background-color: transparent; transition: 0.2s; }
+
+@media (hover: hover) and (pointer: fine) {
+  button:active { transition: 0.1s; transform: scale(0.93); }
+}
+
+button::after { content: &quot;&quot;; position: absolute; inset: 0px; transition: background-color, 0.2s; }
+
+button:disabled { cursor: not-allowed; }
+
+button svg, button wcm-text { position: relative; z-index: 1; }
+
+input { border: none; outline: 0px; appearance: none; }
+
+img { display: block; }
+
+::selection { color: var(--wcm-accent-fill-color); background: var(--wcm-accent-color); }"
+  data-scrapbook-adoptedstylesheet-1=":host { all: initial; }
+
+.wcm-overlay { inset: 0px; position: fixed; z-index: var(--wcm-z-index); overflow: hidden; display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; background-color: var(--wcm-overlay-background-color); backdrop-filter: var(--wcm-overlay-backdrop-filter); }
+
+@media (max-height: 720px) and (orientation: landscape) {
+  .wcm-overlay { overflow: scroll; align-items: flex-start; padding: 20px 0px; }
+}
+
+.wcm-active { pointer-events: auto; }
+
+.wcm-container { position: relative; max-width: 360px; width: 100%; outline: 0px; border-radius: var(--wcm-background-border-radius) var(--wcm-background-border-radius) var(--wcm-container-border-radius) var(--wcm-container-border-radius); border: 1px solid var(--wcm-color-overlay); overflow: hidden; }
+
+.wcm-card { width: 100%; position: relative; border-radius: var(--wcm-container-border-radius); overflow: hidden; box-shadow: 0 6px 14px -6px rgba(10,16,31,.12),0 10px 32px -4px rgba(10,16,31,.1),0 0 0 1px var(--wcm-color-overlay); background-color: var(--wcm-color-bg-1); color: var(--wcm-color-fg-1); }
+
+@media (max-width: 600px) {
+  .wcm-container { max-width: 440px; border-radius: var(--wcm-background-border-radius) var(--wcm-background-border-radius) 0 0; }
+  .wcm-card { border-radius: var(--wcm-container-border-radius) var(--wcm-container-border-radius) 0 0; }
+  .wcm-overlay { align-items: flex-end; }
+}
+
+@media (max-width: 440px) {
+  .wcm-container { border: 0px; }
+}">
+
+<head><script charset="UTF-8" type="text/javascript" src="./d5cc10db-809f-4512-9cf9-a51b0de9dc95.js"></script>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, user-scalable=0," name="viewport">
+  <meta content="#031116" name="theme-color">
+  <title>revert</title>
+  <meta content="Revert - Actionable analytics AMM liquidity providers" name="title">
+  <meta
+    content="Actionable analytics, automation, and management tools for liquidity providers in AMM protocols like Uniswap, Sushiswap, Curve and Balancer"
+    name="description">
+  <meta content="website" property="og:type">
+  <meta content="https://revert.finance/" property="og:url">
+  <meta content="Revert - Actionable analytics for AMM liquidity providers" property="og:title">
+  <meta
+    content="Powerful analytics, automation, and management tools for liquidity providers in AMM protocols like Uniswap, Sushiswap, Curve and Balancer"
+    property="og:description">
+  <meta content="@revertfinance" property="twitter:site">
+  <meta content="https://revert.finance/" property="twitter:url">
+  <meta content="Revert - Actionable analytics for AMM liquidity providers" property="twitter:title">
+  <meta
+    content="Actionable analytics, automation, and management tools for liquidity providers in AMM protocols like Uniswap, Sushiswap, Curve and Balancer"
+    property="twitter:description">
+  <link href="favicon-32x32.png" rel="icon">
+  <link href="https://revert.finance/assets/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+  <link color="#08b44e" href="https://revert.finance/assets/safari-pinned-tab.svg" rel="mask-icon">
+  <link href="berkeley.26B585EF548F2A5E06FC3254288D4DA6.css" rel="stylesheet" type="text/css">
+  <link href="material-symbols.5E811D1FFDCC915BB9A832EE11D9B90B.css" rel="stylesheet" type="text/css">
+  <link href="rainbowkit.AD2DE2F4E04AB38533D2E6099E1F7FB4.css" rel="stylesheet" type="text/css">
+  <link href="bootstrap.6E3B24F501B883D2D2461DDEF6A44FF4.css" rel="stylesheet" type="text/css">
+  <link href="material-design-font.826EE081F22D06D28A6CAF63C1CB2D6F.css" rel="stylesheet" type="text/css">
+  <link href="react-toastify.3693A13AF9F2FD69562FE50474B20446.css" rel="stylesheet" type="text/css">
+  <link href="re-com.B12248D3743A0D2F84C9AF0E84878151.css" rel="stylesheet" type="text/css">
+  <link href="site.B79ADA35217F7B0343AA120C70F60F56.css" rel="stylesheet" type="text/css">
+  <link href="styles.37B050B4109D1B1AB9BA634AFD830008.css" rel="stylesheet" type="text/css">
+  <link href="https://revert.finance/config/site.2178B1F690DB29D42189FBCBB82C6B72.webmanifest" rel="manifest">
+  <script
+    data-scrapbook-elem="custom-elements-loader">(function (names) { if (!customElements) { return; } for (const name of names) { customElements.define(name, class CustomElement extends HTMLElement { }); } })(["wcm-explorer-context", "wcm-theme-context", "wcm-modal"])</script>
+</head>
+
+<body>
+  <div id="app">
+    <div data-rk="">
+      <style>
+        [data-rk] {
+          --rk-blurs-modalOverlay: blur(0px);
+          --rk-fonts-body: SFRounded, ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+          --rk-radii-actionButton: 9999px;
+          --rk-radii-connectButton: 12px;
+          --rk-radii-menuButton: 12px;
+          --rk-radii-modal: 24px;
+          --rk-radii-modalMobile: 28px;
+          --rk-colors-accentColor: #3898FF;
+          --rk-colors-accentColorForeground: #FFF;
+          --rk-colors-actionButtonBorder: rgba(255, 255, 255, 0.04);
+          --rk-colors-actionButtonBorderMobile: rgba(255, 255, 255, 0.08);
+          --rk-colors-actionButtonSecondaryBackground: rgba(255, 255, 255, 0.08);
+          --rk-colors-closeButton: rgba(224, 232, 255, 0.6);
+          --rk-colors-closeButtonBackground: rgba(255, 255, 255, 0.08);
+          --rk-colors-connectButtonBackground: #1A1B1F;
+          --rk-colors-connectButtonBackgroundError: #FF494A;
+          --rk-colors-connectButtonInnerBackground: linear-gradient(0deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.15));
+          --rk-colors-connectButtonText: #FFF;
+          --rk-colors-connectButtonTextError: #FFF;
+          --rk-colors-connectionIndicator: #30E000;
+          --rk-colors-downloadBottomCardBackground: linear-gradient(126deg, rgba(0, 0, 0, 0) 9.49%, rgba(120, 120, 120, 0.2) 71.04%), #1A1B1F;
+          --rk-colors-downloadTopCardBackground: linear-gradient(126deg, rgba(120, 120, 120, 0.2) 9.49%, rgba(0, 0, 0, 0) 71.04%), #1A1B1F;
+          --rk-colors-error: #FF494A;
+          --rk-colors-generalBorder: rgba(255, 255, 255, 0.08);
+          --rk-colors-generalBorderDim: rgba(255, 255, 255, 0.04);
+          --rk-colors-menuItemBackground: rgba(224, 232, 255, 0.1);
+          --rk-colors-modalBackdrop: rgba(0, 0, 0, 0.5);
+          --rk-colors-modalBackground: #1A1B1F;
+          --rk-colors-modalBorder: rgba(255, 255, 255, 0.08);
+          --rk-colors-modalText: #FFF;
+          --rk-colors-modalTextDim: rgba(224, 232, 255, 0.3);
+          --rk-colors-modalTextSecondary: rgba(255, 255, 255, 0.6);
+          --rk-colors-profileAction: rgba(224, 232, 255, 0.1);
+          --rk-colors-profileActionHover: rgba(224, 232, 255, 0.2);
+          --rk-colors-profileForeground: rgba(224, 232, 255, 0.05);
+          --rk-colors-selectedOptionBorder: rgba(224, 232, 255, 0.1);
+          --rk-colors-standby: #FFD641;
+          --rk-shadows-connectButton: 0px 4px 12px rgba(0, 0, 0, 0.1);
+          --rk-shadows-dialog: 0px 8px 32px rgba(0, 0, 0, 0.32);
+          --rk-shadows-profileDetailsAction: 0px 2px 6px rgba(37, 41, 46, 0.04);
+          --rk-shadows-selectedOption: 0px 2px 6px rgba(0, 0, 0, 0.24);
+          --rk-shadows-selectedWallet: 0px 2px 6px rgba(0, 0, 0, 0.24);
+          --rk-shadows-walletLogo: 0px 2px 16px rgba(0, 0, 0, 0.16);
+        }
+      </style>
+      <div class="h-full">
+        <div class="app">
+          <div class="fixed top-0 left-0 z-50 flex w-full h-[44px] md:h-[52px] bg-gray-100 items-center justify-center">
+            <div class="flex ml-4 mr-2 md:mx-6 h-7 w-full max-w-[1920px] justify-between items-center">
+              <div class="flex md:gap-6"><a href="" class="flex items-center"><img src="logotype.svg"
+                    alt="Revert logotype" class="w-[84px] md:w-auto md:h-[14px]"></a>
+                <div class="flex py-0 w-auto no-visible-mobile md:mr-4 gap-2"><a href="#"
+                    class="interact-button flex h-7 px-2.5 rounded-lgg justify-center items-center text-gray-10 text-sm font-bold
+                       uppercase leading-none transition-all duration-200 ease-out border border-transparent
+                       hover:no-underline hover:text-white hover:bg-gray-80 active:text-gray-40 active:bg-gray-100">Create position</a><a
+                    class="interact-button flex h-7 px-2.5 rounded-lgg justify-center items-center text-gray-10 text-sm font-bold
+                           uppercase leading-none transition-all duration-200 ease-out border border-transparent
+                           hover:no-underline hover:text-white hover:bg-gray-80 active:text-gray-40 active:bg-gray-100">Dashboard</a><a href="#"
+                    class="interact-button flex h-7 px-2.5 rounded-lgg justify-center items-center text-gray-10 text-sm font-bold
+                       uppercase leading-none transition-all duration-200 ease-out border border-transparent
+                       hover:no-underline hover:text-white hover:bg-gray-80 active:text-gray-40 active:bg-gray-100">Top
+                    Positions</a><a href="#"
+                    class="flex h-7 px-2.5 rounded-lgg justify-center items-center text-gray-10 text-sm font-bold
+                       uppercase leading-none transition-all duration-200 ease-out border border-transparent
+                       hover:no-underline hover:text-white hover:bg-gray-80 active:text-gray-40 active:bg-gray-100">Incentives</a><a href="#"
+                    class="interact-button flex h-7 px-2.5 rounded-lgg justify-center items-center text-gray-10 text-sm font-bold
+                                 uppercase leading-none transition-all duration-200 ease-out border border-transparent relative
+                                 hover:no-underline hover:text-white hover:bg-gray-80 active:text-gray-40 active:bg-gray-100">
+                    <div class="absolute -left-2 -top-1.5 bg-green-40 text-gray-dark text-[8px] px-[2px] py-[1px] rounded-[2px]
+                                       leanding-none font-bold">NEW</div>Lending
+                  </a><a href="#"
+                    class="flex h-7 px-2.5 rounded-lgg justify-center items-center text-gray-10 text-sm font-bold
+                       uppercase leading-none transition-all duration-200 ease-out border border-transparent relative
+                       hover:no-underline hover:text-white hover:bg-gray-80 active:text-gray-40 active:bg-gray-100">Points</a></div>
+              </div>
+              <div class="flex h-8 items-center gap-1.5">
+                <div class="relative flex no-visible-desktop items-center order-2">
+                  <div class="menu-button flex items-center justify-center w-8 h-8 order-2"><svg width="24"
+                      height="24px" x="0px" y="0px" viewBox="0 0 24 24" class="menu-icon ">
+                      <rect class="white" id="rect1" x="2.8" y="5.8" width="18.3" height="2.3"></rect>
+                      <rect class="white" id="rect2" x="2.8" y="10.9" width="18.3" height="2.3"></rect>
+                      <rect class="white" id="rect3" x="2.8" y="15.9" width="18.3" height="2.3"></rect>
+                    </svg></div>
+                </div>
+                <div class="flex items-center"><button
+                    class="flex relative items-center justify-between bg-green-40 border border-green-30 text-gray-dark hover:bg-green-20 hover:border-green-20 disabled:bg-gray-dark disabled:border-green-90 disabled:text-green-70 disabled:cursor-not-allowed rounded-lgg h-7">
+                    <div
+                      class="interact-button flex truncate relative w-full justify-start items-center pl-3 pr-3 font-bold leading-none text-sm justify-center">
+                      Connect account</div>
+                  </button></div>
+              </div>
+            </div>
+          </div>
+          <div class="app-inner flex flex-col gap-[80px] md:gap-[120px]">
+            <div class="hero-section flex flex-col items-center md:w-full justify-center md:pb-10 h-fit min-h-[440px] md:max-w-[1040px]
+                     mx-4 md:mx-auto relative">
+              <div class="flex flex-col w-full gap-10 items-center justify-center pb-32">
+                <div class="flex flex-col w-full gap-4">
+                  <h1 class="text-white text-2xl md:text-[40px] leading-8 md:leading-[50px] font-bold">Actionable
+                    analytics for <br class="no-visible-mobile">AMM liquidity providers</h1>
+                  <p class="text-gray-10 text-xs md:text-sm font-normal leading-[20px]">Powerful analytics, automation,
+                    lending, and management tools <br class="no-visible-mobile">for liquidity providers in AMM
+                    protocols.</p>
+                </div>
+                <div class="flex flex-col gap-5 w-full items-start">
+                  <div class="flex flex-col md:flex-row gap-4 md:gap-8 w-full h-fit md:items-center">
+                    <div class="flex items-center flex-col w-full md:w-auto md:flex-row gap-3"><button
+                        class="flex relative items-center justify-between bg-green-40 border border-green-30 text-gray-dark hover:bg-green-20 hover:border-green-20 disabled:bg-gray-dark disabled:border-green-90 disabled:text-green-70 disabled:cursor-not-allowed rounded-lgg w-full md:w-fit">
+                        <div
+                          class="interact-button flex truncate relative w-full justify-start items-center pl-6 pr-6 font-bold text-base py-3 justify-center">
+                          Connect Account</div>
+                      </button></div>
+                      
+                      
+                    <div class="w-0 h-10 border-l border-l-gray-60 no-visible-mobile"></div>
+                    <div class="flex flex-col items-stretch min-w-full md:min-w-[480px]">
+                      <div class="relative flex items-stretch text-white !w-full"><input
+                          placeholder="Ethereum address or ENS"
+                          class="peer flex-1 placeholder:text-gray-30 max-h-[44px] border bg-gray-dark border-gray-60 text-white hover:border-gray-40 disabled:border-gray-90 disabled:text-gray-50 focus:border-green-50 focus:outline-none font-bold text-base leading-4 rounded-lgg !mr-0 h-full py-3"
+                          error="Verify your address" data-lpignore="true" value="">
+                        <div class="absolute h-full bottom-0 right-0 text-sm flex items-center shrink-0">
+                          <div class="border bg-gray-90 border-gray-80 text-gray-50 shadown-none hover:shadow-none cursor-not-allowed w-[52px] flex items-center justify-center font-semibold text-base
+                                  rounded-r-lgg cursor-pointer mr-px"
+                            style="height: calc(100% - 2px); min-width: 52px;">GO</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <a href="wallet.html"<div class="flex items-center flex-col w-full md:w-auto md:flex-row gap-3"><button
+                    class="flex relative items-center justify-between bg-green-40 border border-green-30 text-gray-dark hover:bg-green-20 hover:border-green-20 disabled:bg-gray-dark disabled:border-green-90 disabled:text-green-70 disabled:cursor-not-allowed rounded-lgg w-full md:w-fit">
+                    <div
+                      class=" flex truncate relative w-full justify-start items-center pl-6 pr-6 font-bold text-base py-3 justify-center">
+                      Connect Manually</div>
+                  </button></div>
+                  <a href="#/account/hayden.eth"
+                    class="text-sm text-green-40 text-center w-full md:w-auto md:hover:text-green-20 hover:no-underline md:ml-2">View
+                    example wallet →</a>
+                </div>
+                <div class="advices-bann bottom-0 flex gap-[11px] absolute w-full md:w-[1084px]"></div>
+              </div>
+              <div
+                class="scrolldown flex absolute text-xs md:text-sm leading-none text-gray-20 gap-2 bottom-40 md:bottom-28"
+                style="opacity: 1;">Scroll down<img src="down_arrow.svg" alt="Scroll down"></div>
+              <div class="flex flex-col md:flex-row absolute bottom-2 md:bottom-8 w-screen md:w-[1160px] h-fit md:h-12 md:left-1/2
+                      md:-ml-[580px] md:items-center justify-between bg-gradient-to-r from-blue-90/75 to-blue-60/75
+                        md:rounded-[20px] px-4 md:pl-8 md:pr-4 py-3 gap-2">
+                <div class="flex items-center gap-3 md:gap-5"><img src="USDC-APY.svg" class="h-8 md:h-[44px]"><span
+                    class="text-white text-base md:text-lg font-semibold leading-none">Earn 5.62% APY on USDC with
+                    Revert Lend.</span></div><span class="text-blue-10 text-xs font-normal md:leading-none">Plus, <b
+                    class="text-white">50M Revert points</b> distributed over the next 6 months.</span><button
+                  class="flex relative items-center justify-between bg-blue-90 border-blue-70 text-white hover:bg-blue-80 hover:border-blue-60 rounded-lg w-fit">
+                  <div
+                    class="flex truncate relative w-full justify-start items-center pl-2.5 pr-2.5 font-bold uppercase leading-none text-[11px] h-6 w-fit">
+                    LEARN MORE</div>
+                </button>
+              </div>
+            </div>
+            <div class="flex flex-col w-full h-fit max-w-[1160px] mx-auto px-4 md:px-0 gap-10">
+              <div class="flex flex-col gap-3"><span
+                  class="flex w-fit h-fit px-2 py-[3px] bg-green-30 text-sm text-gray-dark font-bold rounded-[5px] leading-none mb-5">OPTIMIZE
+                  LIQUIDITY. ANALYZE. MANAGE. EARN.</span>
+                <h2 class="text-white text-xl md:text-[28px] leading-8 md:leading-10 font-bold">Advanced Analytics for
+                  Leading AMM Protocols</h2>
+                <p class="text-xs md:text-sm text-gray-20">Get a detailed breakdown on LP positions for major AMM
+                  protocols on Ethereum, Polygon, Arbitrum, Optimism, BNB, Base and EVMOS.</p>
+              </div>
+              <div class="flex flex-col gap-3 md:gap-5">
+                <div class="text-base text-green-40">EXCHANGES</div>
+                <div class="flex flex-wrap gap-x-[72px] gap-y-6 md:gap-y-8 md:pl-3">
+                  <div class="flex flex-row gap-5 w-56 items-center">
+                    <div class="w-12 md:w-[60px] h-12 md:h-[60px] flex shrink-0 bg-no-repeat bg-cover uniswap"></div>
+                    <div class="flex flex-col h-full gap-2">
+                      <div class="text-white text-lg md:text-xl leading-none md:leading-none py-1 font-bold">Uniswap v3
+                      </div>
+                      <div class="flex gap-1"><img class="w-6 h-6 shrink-0" src="green-ethereum.svg"
+                          alt="Ethereum network"><img class="w-6 h-6 shrink-0" src="green-polygon.svg"
+                          alt="Polygon network"><img class="w-6 h-6 shrink-0" src="green-optimism.svg"
+                          alt="Optimism network"><img class="w-6 h-6 shrink-0" src="green-arbitrum.svg"
+                          alt="Arbitrum network"><img class="w-6 h-6 shrink-0" src="green-bnb.svg"
+                          alt="BNB Chain network"><img class="w-6 h-6 shrink-0" src="green-base.svg" alt="Base network">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-row gap-5 w-56 items-center">
+                    <div class="w-12 md:w-[60px] h-12 md:h-[60px] flex shrink-0 bg-no-repeat bg-cover uniswap"></div>
+                    <div class="flex flex-col h-full gap-2">
+                      <div class="text-white text-lg md:text-xl leading-none md:leading-none py-1 font-bold">Uniswap v2
+                      </div>
+                      <div class="flex gap-2"><img class="w-6 h-6 shrink-0" src="green-ethereum.svg"
+                          alt="Ethereum network"></div>
+                    </div>
+                  </div>
+                  <div class="flex flex-row gap-5 w-56 items-center">
+                    <div class="w-12 md:w-[60px] h-12 md:h-[60px] flex shrink-0 bg-no-repeat bg-cover pancake"></div>
+                    <div class="flex flex-col h-full gap-2">
+                      <div class="text-white text-lg md:text-xl leading-none md:leading-none py-1 font-bold">Pancakeswap
+                      </div>
+                      <div class="flex gap-2"><img class="w-6 h-6 shrink-0" src="green-bnb.svg" alt="BNB Chain network">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-row gap-5 w-56 items-center">
+                    <div class="w-12 md:w-[60px] h-12 md:h-[60px] flex shrink-0 bg-no-repeat bg-cover sushiswap"></div>
+                    <div class="flex flex-col h-full gap-2">
+                      <div class="text-white text-lg md:text-xl leading-none md:leading-none py-1 font-bold">Sushiswap
+                      </div>
+                      <div class="flex gap-2"><img class="w-6 h-6 shrink-0" src="green-ethereum.svg"
+                          alt="Ethereum network"><img class="w-6 h-6 shrink-0" src="green-arbitrum.svg"
+                          alt="Arbitrum network"></div>
+                    </div>
+                  </div>
+                  <div class="flex flex-row gap-5 w-56 items-center">
+                    <div class="w-12 md:w-[60px] h-12 md:h-[60px] flex shrink-0 bg-no-repeat bg-cover aerodrome"></div>
+                    <div class="flex flex-col h-full gap-2">
+                      <div class="text-white text-lg md:text-xl leading-none md:leading-none py-1 font-bold">Aerodrome
+                      </div>
+                      <div class="flex gap-2"><img class="w-6 h-6 shrink-0" src="green-base.svg"
+                          alt="Aerodrome network"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 md:gap-5">
+                <div class="text-base text-gray-30">COMMING SOON</div>
+                <div class="flex flex-wrap gap-x-0 gap-y-4 md:gap-x-14 md:gap-y-5 md:pl-3">
+                  <div class="flex flex-row gap-3 md:gap-4 w-1/2 md:w-[180px] items-center">
+                    <div class="w-8 h-8 flex shrink-0 bg-no-repeat bg-cover uniswap"></div>
+                    <div class="text-base text-gray-20 leading-none">Uniswap v4</div>
+                  </div>
+                  <div class="flex flex-row gap-3 md:gap-4 w-1/2 md:w-[180px] items-center">
+                    <div class="w-8 h-8 flex shrink-0 bg-no-repeat bg-cover velodrome"></div>
+                    <div class="text-base text-gray-20 leading-none">Velodrome</div>
+                  </div>
+                  <div class="flex flex-row gap-3 md:gap-4 w-1/2 md:w-[180px] items-center">
+                    <div class="w-8 h-8 flex shrink-0 bg-no-repeat bg-cover curve"></div>
+                    <div class="text-base text-gray-20 leading-none">Curve</div>
+                  </div>
+                  <div class="flex flex-row gap-3 md:gap-4 w-1/2 md:w-[180px] items-center">
+                    <div class="w-8 h-8 flex shrink-0 bg-no-repeat bg-cover balancer"></div>
+                    <div class="text-base text-gray-20 leading-none">Balancer</div>
+                  </div>
+                  <div class="flex flex-row gap-3 md:gap-4 w-1/2 md:w-[180px] items-center">
+                    <div class="w-8 h-8 flex shrink-0 bg-no-repeat bg-cover maverik"></div>
+                    <div class="text-base text-gray-20 leading-none">Maverick</div>
+                  </div>
+                  <div class="flex flex-row gap-3 md:gap-4 w-1/2 md:w-[180px] items-center">
+                    <div class="w-8 h-8 flex shrink-0 bg-no-repeat bg-cover ambient"></div>
+                    <div class="text-base text-gray-20 leading-none">Ambient</div>
+                  </div>
+                  <div class="flex flex-row gap-3 md:gap-4 w-1/2 md:w-[180px] items-center">
+                    <div class="w-8 h-8 flex shrink-0 bg-no-repeat bg-cover camelot"></div>
+                    <div class="text-base text-gray-20 leading-none">Camelot</div>
+                  </div>
+                  <div class="flex flex-row gap-3 md:gap-4 w-1/2 md:w-[180px] items-center">
+                    <div class="w-8 h-8 flex shrink-0 bg-no-repeat bg-cover traderjoe"></div>
+                    <div class="text-base text-gray-20 leading-none">Trader Joe</div>
+                  </div>
+                  <div class="flex flex-row gap-3 md:gap-4 w-1/2 md:w-[180px] items-center">
+                    <div class="w-8 h-8 flex shrink-0 bg-no-repeat bg-cover quickswap"></div>
+                    <div class="text-base text-gray-20 leading-none">QuickSwap</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col md:flex-row w-full h-fit max-w-[1160px] mx-auto gap-10 justify-between items-center
+                     px-4 md:px-0">
+              <div class="flex flex-col w-full max-w-[540px] gap-8">
+                <div class="flex flex-col w-full gap-3">
+                  <h2 class="interact-button text-white text-xl md:text-[28px] leading-8 md:leading-10 font-bold">Create and manage LP
+                    positions.</h2>
+                  <p class="text-xs md:text-sm text-gray-20">Manage all your LP positions with ease and automation from
+                    one trusty dashboard. Deposit, Withdraw, Collect, Move-Range,
+                    Auto-Exit, and Compound fees</p>
+                </div>
+                <div class="flex flex-col gap-3 w-fit"><button
+                    class="flex relative items-center justify-between bg-green-40 border border-green-30 text-gray-dark hover:bg-green-20 hover:border-green-20 disabled:bg-gray-dark disabled:border-green-90 disabled:text-green-70 disabled:cursor-not-allowed rounded-lgg h-7 w-fit">
+                    <div
+                      class="interact-button flex truncate relative w-full justify-start items-center pl-3 pr-3 font-bold leading-none text-sm justify-center">
+                      Connect Account</div>
+                  </button>
+                  <div class="interact-button flex text-xs bg-green-100 h-6 px-2 rounded-lgg text-gray-20 items-center gap-2"><img
+                      class="interact-button w-4 h-4" src="icon-small.svg">Earn points managing positions</div>
+                </div>
+              </div><img src="manage-img.png" class="w-full md:w-[400px] h-auto md:h-[172px]">
+            </div>
+            <div class="flex flex-col md:flex-row w-full h-fit max-w-[1160px] mx-auto gap-10 justify-between items-center
+                     px-4 md:px-0">
+              <div class="flex flex-col w-full max-w-[540px] gap-8">
+                <div class="flex gap-3"><button class="flex relative items-center justify-between  rounded-[5px] flex items-center border shrink-0 md:w-auto justify-center h-8 md:h-6 rounded-[5px]
+                    text-sm font-bold max-w-[180px] bg-green-100/50 border-green-80 text-green-40 transition-all md:hover:bg-green-90
+                         md:hover:border-green-70 md:hover:text-green-30 disabled:bg-gray-90 disabled:border-gray-80
+                         disabled:text-gray-50 disabled:hover:border-gray-80 disabled:hover:text-gray-50
+                         disabled:hover:bg-gray-90 disabled:cursor-not-allowed">
+                    <div
+                      class="flex truncate relative w-full justify-start items-center pl-2 pr-2 font-bold text-sm justify-center">
+                      Lending</div>
+                  </button><button class="flex relative items-center justify-between  rounded-[5px] flex items-center border shrink-0 md:w-auto justify-center h-8 md:h-6 rounded-[5px]
+                    text-sm font-bold max-w-[180px] borrow-button">
+                    <div
+                      class="flex truncate relative w-full justify-start items-center pl-2 pr-2 font-bold text-sm justify-center">
+                      Borrow</div>
+                  </button></div>
+                <div class="flex flex-col w-full gap-3">
+                  <h2 class="text-white text-xl md:text-[28px] leading-8 md:leading-10 font-bold">Collateralize LP
+                    Positions.</h2>
+                  <p class="text-xs md:text-sm text-gray-20">Secure loans with LP positions as collateral while
+                    retaining management of your liquidity.</p>
+                </div>
+                <div class="flex flex-col md:flex-row gap-3 w-fit"><button
+                    class="flex relative items-center justify-between bg-green-40 border border-green-30 text-gray-dark hover:bg-green-20 hover:border-green-20 disabled:bg-gray-dark disabled:border-green-90 disabled:text-green-70 disabled:cursor-not-allowed rounded-lgg h-7 w-fit">
+                    <div
+                      class="flex truncate relative w-full justify-start items-center pl-3 pr-3 font-bold leading-none text-sm justify-center">
+                      Connect Account</div>
+                  </button></div>
+                <div class="flex text-xs bg-gray-90 w-fit h-7 rounded-lgg text-gray-20 items-center
+                                   px-2 md:px-3 gap-1.5 md:gap-2"><span class="text-xs text-gray-20">Audited
+                    by</span><a href="https://code4rena.com/audits/2024-03-revert-lend" target="_blank"
+                    class="text-xs text-green-50 hover:text-green-20 hover:no-underline">CODE4ARENA, </a><a
+                    href="https://github.com/hydnsec/audits/blob/main/Revert%20Finance%20-%20Lend/HYDN%20-%20Revert%20Finance%20Lend%20Audit%20Report.pdf"
+                    target="_blank" class="text-xs text-green-50 hover:text-green-20 hover:no-underline">HYDN, </a><span
+                    class="text-xs text-gray-20">and </span><a
+                    href="https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-Revert-Lend-v1.0.pdf"
+                    target="_blank" class="text-xs text-green-50 hover:text-green-20 hover:no-underline">PECKSHIELD</a>
+                </div>
+              </div><img src="borrow-img.png" class="w-full md:w-[440px] h-auto md:h-[192px]">
+            </div>
+            <div class="flex flex-col md:flex-row w-full h-fit max-w-[1160px] mx-auto gap-10 justify-between items-center
+                     px-4 md:px-0">
+              <div class="flex flex-col w-full max-w-[540px] gap-8">
+                <div class="flex gap-3"><button class="flex relative items-center justify-between  rounded-[5px] flex items-center border shrink-0 md:w-auto justify-center h-8 md:h-6 rounded-[5px]
+                    text-sm font-bold max-w-[180px] bg-green-100/50 border-green-80 text-green-40 transition-all md:hover:bg-green-90
+                         md:hover:border-green-70 md:hover:text-green-30 disabled:bg-gray-90 disabled:border-gray-80
+                         disabled:text-gray-50 disabled:hover:border-gray-80 disabled:hover:text-gray-50
+                         disabled:hover:bg-gray-90 disabled:cursor-not-allowed">
+                    <div
+                      class="flex truncate relative w-full justify-start items-center pl-2 pr-2 font-bold text-sm justify-center">
+                      Move-Range</div>
+                  </button></div>
+                <div class="flex flex-col w-full gap-3">
+                  <h2 class="text-white text-xl md:text-[28px] leading-8 md:leading-10 font-bold">Keep your positions
+                    in-range.</h2>
+                  <p class="text-xs md:text-sm text-gray-20">Your liquidity consistently in-range with Manual move range
+                    and Revert's Auto-Range, ensuring you never miss out on pool fees.</p>
+                </div>
+                <div class="flex text-xs bg-gray-90 w-fit h-7 rounded-lgg text-gray-20 items-center
+                         px-2 md:px-3 gap-1.5 md:gap-2"><span class="text-xs text-gray-20">Audited by</span><a
+                    href="https://code4rena.com/audits/2024-03-revert-lend" target="_blank"
+                    class="text-xs text-green-50 hover:text-green-20 hover:no-underline">CODE4ARENA, </a><a
+                    href="https://github.com/hydnsec/audits/blob/main/Revert%20Finance%20-%20Lend/HYDN%20-%20Revert%20Finance%20Lend%20Audit%20Report.pdf"
+                    target="_blank" class="text-xs text-green-50 hover:text-green-20 hover:no-underline">HYDN, </a><span
+                    class="text-xs text-gray-20">and </span><a
+                    href="https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-Revert-Lend-v1.0.pdf"
+                    target="_blank" class="text-xs text-green-50 hover:text-green-20 hover:no-underline">PECKSHIELD</a>
+                </div>
+              </div><img src="move-range-img.png" class="w-full md:w-[438px] h-auto md:h-[226px]">
+            </div>
+            <div class="flex flex-col md:flex-row w-full h-fit max-w-[1160px] mx-auto gap-10 justify-between items-center
+                     px-4 md:px-0">
+              <div class="flex flex-col w-full max-w-[540px] gap-8">
+                <div class="flex gap-3"><button class="flex relative items-center justify-between  rounded-[5px] flex items-center border shrink-0 md:w-auto justify-center h-8 md:h-6 rounded-[5px]
+                    text-sm font-bold max-w-[180px] bg-green-100/50 border-green-80 text-green-40 transition-all md:hover:bg-green-90
+                         md:hover:border-green-70 md:hover:text-green-30 disabled:bg-gray-90 disabled:border-gray-80
+                         disabled:text-gray-50 disabled:hover:border-gray-80 disabled:hover:text-gray-50
+                         disabled:hover:bg-gray-90 disabled:cursor-not-allowed">
+                    <div
+                      class="flex truncate relative w-full justify-start items-center pl-2 pr-2 font-bold text-sm justify-center">
+                      Auto-Exit</div>
+                  </button></div>
+                <div class="flex flex-col w-full gap-3">
+                  <h2 class="text-white text-xl md:text-[28px] leading-8 md:leading-10 font-bold">Automate exits with
+                    Auto-exit.</h2>
+                  <p class="text-xs md:text-sm text-gray-20">Automate your exit strategy with Auto-Exit. Set your target
+                    exit prices to automate your exits, ensuring peace of
+                    mind and minimizing losses.</p>
+                </div>
+                <div class="flex text-xs bg-gray-90 w-fit h-7 rounded-lgg text-gray-20 items-center
+                         px-2 md:px-3 gap-1.5 md:gap-2"><span class="text-xs text-gray-20">Audited by </span><a
+                    href="https://code4rena.com/audits/2024-03-revert-lend" target="_blank"
+                    class="text-xs text-green-50 hover:text-green-20 hover:no-underline">CODE4ARENA, </a><a
+                    href="https://github.com/hydnsec/audits/blob/main/Revert%20Finance%20-%20Lend/HYDN%20-%20Revert%20Finance%20Lend%20Audit%20Report.pdf"
+                    target="_blank" class="text-xs text-green-50 hover:text-green-20 hover:no-underline">HYDN, </a><span
+                    class="text-xs text-gray-20">and </span><a
+                    href="https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-Revert-Lend-v1.0.pdf"
+                    target="_blank" class="text-xs text-green-50 hover:text-green-20 hover:no-underline">PECKSHIELD</a>
+                </div>
+              </div><img src="auto-exit-img.png" class="w-full md:w-[438px] h-auto md:h-[226px]">
+            </div>
+            <div class="flex flex-col md:flex-row w-full h-fit max-w-[1160px] mx-auto gap-10 justify-between items-center
+                           px-4 md:px-0">
+              <div class="flex flex-col w-full max-w-[540px] gap-8">
+                <div class="flex gap-3"><button class="flex relative items-center justify-between  rounded-[5px] flex items-center border shrink-0 md:w-auto justify-center h-8 md:h-6 rounded-[5px]
+                    text-sm font-bold max-w-[180px] autocomp-optimal-button">
+                    <div
+                      class="flex truncate relative w-full justify-start items-center pl-2 pr-2 font-bold text-sm justify-center">
+                      Compound</div>
+                  </button></div>
+                <div class="flex flex-col w-full gap-3">
+                  <h2 class="text-white text-xl md:text-[28px] leading-8 md:leading-10 font-bold">Boost earnings with
+                    Auto-Compounding.</h2>
+                  <p class="text-xs md:text-sm text-gray-20">Auto-Compounding allows to automate the compounding of
+                    accrued fees. Depending on the fee APR and position size,
+                    this can significantly enhance returns.</p>
+                </div>
+                <div class="flex text-xs md:text-xs bg-gray-90 w-fit h-7 rounded-lgg text-gray-20 items-center
+                         px-2 md:px-3 gap-1.5 md:gap-2"><span class="text-xs text-gray-20">Audited by </span><a
+                    href="https://code4rena.com/audits/2024-03-revert-lend" target="_blank"
+                    class="text-xs text-green-50 hover:text-green-20 hover:no-underline">CODE4ARENA, </a><a
+                    href="https://github.com/hydnsec/audits/blob/main/Revert%20Finance%20-%20Lend/HYDN%20-%20Revert%20Finance%20Lend%20Audit%20Report.pdf"
+                    target="_blank" class="text-xs text-green-50 hover:text-green-20 hover:no-underline">HYDN, </a><span
+                    class="text-xs text-gray-20">and </span><a
+                    href="https://github.com/peckshield/publications/blob/master/audit_reports/PeckShield-Audit-Report-Revert-Lend-v1.0.pdf"
+                    target="_blank" class="text-xs text-green-50 hover:text-green-20 hover:no-underline">PECKSHIELD</a>
+                </div>
+              </div><img src="auto-compound-img.png" class="w-full md:w-[444px] h-auto md:h-[148px]">
+            </div>
+            <div
+              class="flex flex-col md:flex-row w-full h-fit max-w-[1160px] mx-auto gap-10 justify-between items-center">
+              <div class="flex flex-col w-full gap-8">
+                <div class="flex flex-col w-full gap-3 px-4 md:px-0">
+                  <h2 class="text-white text-xl md:text-[28px] leading-8 md:leading-10 font-bold">Backtest LP positions.
+                  </h2>
+                  <p class="text-xs md:text-sm text-gray-20">Access historical performance data based on selected
+                    parameters while creating<br class="no-visible-mobile">a position to make better decisions.</p>
+                </div>
+                <div
+                  class="flex flex-col bg-gray-dark border border-gray-80 w-fit h-fit px-4 py-6 md:p-6 md:rounded-lgg gap-5">
+                  <div class="flex flex-col gap-2">
+                    <h3 class="text-base text-white leading-none">WETH/USDC Backtesting</h3>
+                    <p class="text-sm text-gray-20">This is a simulation based on historical data. It is not a
+                      prediction.</p>
+                  </div>
+                  <div class="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6 md:gap-x-8">
+                    <div class="flex flex-col w-full md:w-[200px] gap-2">
+                      <div class="text-xs text-gray-20 leading-none">time within range</div>
+                      <div class="text-xl text-white leading-none font-bold">30.75%</div>
+                      <div class="flex flex-row w-[150px] h-2 items-center relative border border-gray-70 rounded-md">
+                        <div class="rounded-md h-2 z-[3] absolute min-w-[3px] bg-green-50"
+                          style="left: 0%; width: 30.3%;"></div>
+                      </div>
+                    </div>
+                    <div class="flex flex-col w-full md:w-[200px] gap-2">
+                      <div class="text-xs text-gray-20 leading-none">APR vs HODL</div>
+                      <div class="w-full flex flex-col gap-1">
+                        <div class="flex gap-2 items-baseline">
+                          <div class="text-xl leading-none font-bold text-green-20">33.01%</div>
+                          <div class="text-sm text-gray-20 leading-none font-normal"></div>
+                        </div>
+                        <div class="spark-line-chart"><svg viewBox="0 0 240 24" preserveAspectRatio="none">
+                            <g>
+                              <circle cx="2" cy="9.333333333333332" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="20.153846153846153" cy="14.666666666666666" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="38.30769230769231" cy="2" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="56.46153846153846" cy="16" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="74.61538461538461" cy="14" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="92.76923076923077" cy="22" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="110.92307692307692" cy="8.666666666666666" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="129.07692307692307" cy="16.666666666666664" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="147.23076923076923" cy="21.333333333333332" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="165.3846153846154" cy="14" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="183.53846153846155" cy="13.333333333333332" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="201.69230769230768" cy="19.333333333333332" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="219.84615384615384" cy="16.666666666666664" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="238" cy="15.326666666666668" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <polyline
+                                points="2 9.333333333333332 20.153846153846153 14.666666666666666 38.30769230769231 2 56.46153846153846 16 74.61538461538461 14 92.76923076923077 22 110.92307692307692 8.666666666666666 129.07692307692307 16.666666666666664 147.23076923076923 21.333333333333332 165.3846153846154 14 183.53846153846155 13.333333333333332 201.69230769230768 19.333333333333332 219.84615384615384 16.666666666666664 238 15.326666666666668 238 22 2 22 2 9.333333333333332"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </polyline>
+                              <polyline
+                                points="2 9.333333333333332 20.153846153846153 14.666666666666666 38.30769230769231 2 56.46153846153846 16 74.61538461538461 14 92.76923076923077 22 110.92307692307692 8.666666666666666 129.07692307692307 16.666666666666664 147.23076923076923 21.333333333333332 165.3846153846154 14 183.53846153846155 13.333333333333332 201.69230769230768 19.333333333333332 219.84615384615384 16.666666666666664 238 15.326666666666668"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 1; stroke-linejoin: round; stroke-linecap: round; fill: none;">
+                              </polyline>
+                            </g>
+                            <line x1="2" y1="11.866666666666667" x2="238" y2="11.866666666666667"
+                              style="stroke: rgb(155, 176, 167); stroke-opacity: 0.5; stroke-dasharray: 2, 2;"></line>
+                            <g>
+                              <circle cx="238" cy="15.326666666666668" r="2" style="fill: green;"></circle>
+                            </g>
+                          </svg></div>
+                      </div>
+                    </div>
+                    <div class="flex flex-col w-full md:w-[200px] gap-2">
+                      <div class="text-xs text-gray-20 leading-none">PnL vs HODL</div>
+                      <div class="w-full flex flex-col gap-1">
+                        <div class="flex gap-2 items-baseline">
+                          <div class="text-xl leading-none font-bold text-green-20">251.49%</div>
+                          <div class="text-sm text-gray-20 leading-none font-normal"></div>
+                        </div>
+                        <div class="spark-line-chart"><svg viewBox="0 0 240 24" preserveAspectRatio="none">
+                            <g>
+                              <circle cx="2" cy="11.253731343283583" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="20.153846153846153" cy="22" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="38.30769230769231" cy="10.159203980099504" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="56.46153846153846" cy="2.298507462686567" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="74.61538461538461" cy="11.950248756218906" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="92.76923076923077" cy="22" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="110.92307692307692" cy="2" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="129.07692307692307" cy="13.343283582089553" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="147.23076923076923" cy="13.044776119402986" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="165.3846153846154" cy="11.950248756218906" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="183.53846153846155" cy="10.855721393034827" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="201.69230769230768" cy="12.746268656716419" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="219.84615384615384" cy="13.343283582089553" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="238" cy="20.259701492537314" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <polyline
+                                points="2 11.253731343283583 20.153846153846153 22 38.30769230769231 10.159203980099504 56.46153846153846 2.298507462686567 74.61538461538461 11.950248756218906 92.76923076923077 22 110.92307692307692 2 129.07692307692307 13.343283582089553 147.23076923076923 13.044776119402986 165.3846153846154 11.950248756218906 183.53846153846155 10.855721393034827 201.69230769230768 12.746268656716419 219.84615384615384 13.343283582089553 238 20.259701492537314 238 22 2 22 2 11.253731343283583"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </polyline>
+                              <polyline
+                                points="2 11.253731343283583 20.153846153846153 22 38.30769230769231 10.159203980099504 56.46153846153846 2.298507462686567 74.61538461538461 11.950248756218906 92.76923076923077 22 110.92307692307692 2 129.07692307692307 13.343283582089553 147.23076923076923 13.044776119402986 165.3846153846154 11.950248756218906 183.53846153846155 10.855721393034827 201.69230769230768 12.746268656716419 219.84615384615384 13.343283582089553 238 20.259701492537314"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 1; stroke-linejoin: round; stroke-linecap: round; fill: none;">
+                              </polyline>
+                            </g>
+                            <line x1="2" y1="13.402985074626866" x2="238" y2="13.402985074626866"
+                              style="stroke: rgb(155, 176, 167); stroke-opacity: 0.5; stroke-dasharray: 2, 2;"></line>
+                            <g>
+                              <circle cx="238" cy="20.259701492537314" r="2" style="fill: red;"></circle>
+                            </g>
+                          </svg></div>
+                      </div>
+                    </div>
+                    <div class="flex flex-col w-full md:w-[200px] gap-2">
+                      <div class="text-xs text-gray-20 leading-none">fee APR</div>
+                      <div class="w-full flex flex-col gap-1">
+                        <div class="flex gap-2 items-baseline">
+                          <div class="text-xl leading-none font-bold text-green-20">20.97%</div>
+                          <div class="text-sm text-gray-20 leading-none font-normal"></div>
+                        </div>
+                        <div class="spark-line-chart"><svg viewBox="0 0 240 24" preserveAspectRatio="none">
+                            <g>
+                              <circle cx="2" cy="18.22641509433962" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="20.153846153846153" cy="16.339622641509436" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="38.30769230769231" cy="14.70440251572327" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="56.46153846153846" cy="6.276729559748427" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="74.61538461538461" cy="2" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="92.76923076923077" cy="4.389937106918238" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="110.92307692307692" cy="4.515723270440252" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="129.07692307692307" cy="6.9056603773584895" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="147.23076923076923" cy="3.761006289308175" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="165.3846153846154" cy="2" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="183.53846153846155" cy="13.823899371069182" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="201.69230769230768" cy="12.062893081761008" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="219.84615384615384" cy="22" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="238" cy="20.150943396226417" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <polyline
+                                points="2 18.22641509433962 20.153846153846153 16.339622641509436 38.30769230769231 14.70440251572327 56.46153846153846 6.276729559748427 74.61538461538461 2 92.76923076923077 4.389937106918238 110.92307692307692 4.515723270440252 129.07692307692307 6.9056603773584895 147.23076923076923 3.761006289308175 165.3846153846154 2 183.53846153846155 13.823899371069182 201.69230769230768 12.062893081761008 219.84615384615384 22 238 20.150943396226417 238 22 2 22 2 18.22641509433962"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </polyline>
+                              <polyline
+                                points="2 18.22641509433962 20.153846153846153 16.339622641509436 38.30769230769231 14.70440251572327 56.46153846153846 6.276729559748427 74.61538461538461 2 92.76923076923077 4.389937106918238 110.92307692307692 4.515723270440252 129.07692307692307 6.9056603773584895 147.23076923076923 3.761006289308175 165.3846153846154 2 183.53846153846155 13.823899371069182 201.69230769230768 12.062893081761008 219.84615384615384 22 238 20.150943396226417"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 1; stroke-linejoin: round; stroke-linecap: round; fill: none;">
+                              </polyline>
+                            </g>
+                            <line x1="2" y1="18.9811320754717" x2="238" y2="18.9811320754717"
+                              style="stroke: rgb(155, 176, 167); stroke-opacity: 0.5; stroke-dasharray: 2, 2;"></line>
+                            <g>
+                              <circle cx="238" cy="20.150943396226417" r="2" style="fill: green;"></circle>
+                            </g>
+                          </svg></div>
+                      </div>
+                    </div>
+                    <div class="flex flex-col w-full md:w-[200px] gap-2">
+                      <div class="text-xs text-gray-20 leading-none">divergence PnL</div>
+                      <div class="w-full flex flex-col gap-1">
+                        <div class="flex gap-2 items-baseline">
+                          <div class="text-xl leading-none font-bold text-red-30">-$251.48</div>
+                          <div class="text-sm text-gray-20 leading-none font-normal"></div>
+                        </div>
+                        <div class="spark-line-chart"><svg viewBox="0 0 240 24" preserveAspectRatio="none">
+                            <g>
+                              <circle cx="2" cy="9.100000000000001" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="20.153846153846153" cy="10.6" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="38.30769230769231" cy="11.9" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="56.46153846153846" cy="18.6" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="74.61538461538461" cy="22" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="92.76923076923077" cy="10.1" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="110.92307692307692" cy="10" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="129.07692307692307" cy="8.100000000000001" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="147.23076923076923" cy="20.6" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="165.3846153846154" cy="11.9" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="183.53846153846155" cy="8.600000000000001" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="201.69230769230768" cy="2" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="219.84615384615384" cy="10.1" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="238" cy="11.748" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <polyline
+                                points="2 9.100000000000001 20.153846153846153 10.6 38.30769230769231 11.9 56.46153846153846 18.6 74.61538461538461 22 92.76923076923077 10.1 110.92307692307692 10 129.07692307692307 8.100000000000001 147.23076923076923 20.6 165.3846153846154 11.9 183.53846153846155 8.600000000000001 201.69230769230768 2 219.84615384615384 10.1 238 11.748 238 22 2 22 2 9.100000000000001"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </polyline>
+                              <polyline
+                                points="2 9.100000000000001 20.153846153846153 10.6 38.30769230769231 11.9 56.46153846153846 18.6 74.61538461538461 22 92.76923076923077 10.1 110.92307692307692 10 129.07692307692307 8.100000000000001 147.23076923076923 20.6 165.3846153846154 11.9 183.53846153846155 8.600000000000001 201.69230769230768 2 219.84615384615384 10.1 238 11.748"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 1; stroke-linejoin: round; stroke-linecap: round; fill: none;">
+                              </polyline>
+                            </g>
+                            <line x1="2" y1="16.32" x2="238" y2="16.32"
+                              style="stroke: rgb(155, 176, 167); stroke-opacity: 0.5; stroke-dasharray: 2, 2;"></line>
+                            <g>
+                              <circle cx="238" cy="11.748" r="2" style="fill: red;"></circle>
+                            </g>
+                          </svg></div>
+                      </div>
+                    </div>
+                    <div class="flex flex-col w-full md:w-[200px] gap-2">
+                      <div class="text-xs text-gray-20 leading-none">total fees</div>
+                      <div class="w-full flex flex-col gap-1">
+                        <div class="flex gap-2 items-baseline">
+                          <div class="text-xl leading-none font-bold text-white">$502.97</div>
+                          <div class="text-sm text-gray-20 leading-none font-normal"></div>
+                        </div>
+                        <div class="spark-line-chart"><svg viewBox="0 0 240 24" preserveAspectRatio="none">
+                            <g>
+                              <circle cx="2" cy="22" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="20.153846153846153" cy="20.920746843184517" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="38.30769230769231" cy="19.985394107277763" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="56.46153846153846" cy="15.16473000683527" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="74.61538461538461" cy="12.718422851386842" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="92.76923076923077" cy="6.89045580458323" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="110.92307692307692" cy="6.962406015037596" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="129.07692307692307" cy="8.329460013670541" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="147.23076923076923" cy="6.530704752311402" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="165.3846153846154" cy="5.523401805950284" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="183.53846153846155" cy="5.091700543224091" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="201.69230769230768" cy="4.084397596862972" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="219.84615384615384" cy="2.5734431773212956" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="238" cy="2" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <polyline
+                                points="2 22 20.153846153846153 20.920746843184517 38.30769230769231 19.985394107277763 56.46153846153846 15.16473000683527 74.61538461538461 12.718422851386842 92.76923076923077 6.89045580458323 110.92307692307692 6.962406015037596 129.07692307692307 8.329460013670541 147.23076923076923 6.530704752311402 165.3846153846154 5.523401805950284 183.53846153846155 5.091700543224091 201.69230769230768 4.084397596862972 219.84615384615384 2.5734431773212956 238 2 238 22 2 22 2 22"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </polyline>
+                              <polyline
+                                points="2 22 20.153846153846153 20.920746843184517 38.30769230769231 19.985394107277763 56.46153846153846 15.16473000683527 74.61538461538461 12.718422851386842 92.76923076923077 6.89045580458323 110.92307692307692 6.962406015037596 129.07692307692307 8.329460013670541 147.23076923076923 6.530704752311402 165.3846153846154 5.523401805950284 183.53846153846155 5.091700543224091 201.69230769230768 4.084397596862972 219.84615384615384 2.5734431773212956 238 2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 1; stroke-linejoin: round; stroke-linecap: round; fill: none;">
+                              </polyline>
+                            </g>
+                            <line x1="2" y1="22" x2="238" y2="22"
+                              style="stroke: rgb(155, 176, 167); stroke-opacity: 0.5; stroke-dasharray: 2, 2;"></line>
+                            <g>
+                              <circle cx="238" cy="2" r="2" style="fill: green;"></circle>
+                            </g>
+                          </svg></div>
+                      </div>
+                    </div>
+                    <div class="flex flex-col w-full md:w-[200px] gap-2">
+                      <div class="text-xs text-gray-20 leading-none">total ABC fees</div>
+                      <div class="w-full flex flex-col gap-1">
+                        <div class="flex gap-2 items-baseline">
+                          <div class="text-xl leading-none font-bold text-white">$402.98</div>
+                          <div class="text-sm text-gray-20 leading-none font-normal"></div>
+                        </div>
+                        <div class="spark-line-chart"><svg viewBox="0 0 240 24" preserveAspectRatio="none">
+                            <g>
+                              <circle cx="2" cy="22" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="20.153846153846153" cy="20.314417350264076" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="38.30769230769231" cy="18.853579053826273" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="56.46153846153846" cy="11.32464321833914" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="74.61538461538461" cy="7.503989212271043" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="92.76923076923077" cy="9.639060568603215" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="110.92307692307692" cy="9.751432745252277" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="129.07692307692307" cy="11.88650410158445" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="147.23076923076923" cy="9.077199685357908" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="165.3846153846154" cy="7.503989212271043" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="183.53846153846155" cy="6.829756152376673" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="201.69230769230768" cy="5.256545679289809" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="219.84615384615384" cy="2.896729969659514" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="238" cy="2" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <polyline
+                                points="2 22 20.153846153846153 20.314417350264076 38.30769230769231 18.853579053826273 56.46153846153846 11.32464321833914 74.61538461538461 7.503989212271043 92.76923076923077 9.639060568603215 110.92307692307692 9.751432745252277 129.07692307692307 11.88650410158445 147.23076923076923 9.077199685357908 165.3846153846154 7.503989212271043 183.53846153846155 6.829756152376673 201.69230769230768 5.256545679289809 219.84615384615384 2.896729969659514 238 2 238 22 2 22 2 22"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </polyline>
+                              <polyline
+                                points="2 22 20.153846153846153 20.314417350264076 38.30769230769231 18.853579053826273 56.46153846153846 11.32464321833914 74.61538461538461 7.503989212271043 92.76923076923077 9.639060568603215 110.92307692307692 9.751432745252277 129.07692307692307 11.88650410158445 147.23076923076923 9.077199685357908 165.3846153846154 7.503989212271043 183.53846153846155 6.829756152376673 201.69230769230768 5.256545679289809 219.84615384615384 2.896729969659514 238 2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 1; stroke-linejoin: round; stroke-linecap: round; fill: none;">
+                              </polyline>
+                            </g>
+                            <line x1="2" y1="22" x2="238" y2="22"
+                              style="stroke: rgb(155, 176, 167); stroke-opacity: 0.5; stroke-dasharray: 2, 2;"></line>
+                            <g>
+                              <circle cx="238" cy="2" r="2" style="fill: green;"></circle>
+                            </g>
+                          </svg></div>
+                      </div>
+                    </div>
+                    <div class="flex flex-col w-full md:w-[200px] gap-2">
+                      <div class="text-xs text-gray-20 leading-none">total XYZ fees</div>
+                      <div class="w-full flex flex-col gap-1">
+                        <div class="flex gap-2 items-baseline">
+                          <div class="text-xl leading-none font-bold text-white">$0.08</div>
+                          <div class="text-sm text-gray-20 leading-none font-normal"></div>
+                        </div>
+                        <div class="spark-line-chart"><svg viewBox="0 0 240 24" preserveAspectRatio="none">
+                            <g>
+                              <circle cx="2" cy="22" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="20.153846153846153" cy="21.891107078039926" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="38.30769230769231" cy="21.7967332123412" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="56.46153846153846" cy="21.310344827586206" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="74.61538461538461" cy="21.06352087114338" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="92.76923076923077" cy="13.941923774954624" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="110.92307692307692" cy="13.949183303085302" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="129.07692307692307" cy="14.087114337568059" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="147.23076923076923" cy="6.646098003629756" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="165.3846153846154" cy="6.5444646098003645" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="183.53846153846155" cy="6.5009074410163326" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="201.69230769230768" cy="6.39927404718693" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="219.84615384615384" cy="6.246823956442827" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <circle cx="238" cy="2" r="2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </circle>
+                              <polyline
+                                points="2 22 20.153846153846153 21.891107078039926 38.30769230769231 21.7967332123412 56.46153846153846 21.310344827586206 74.61538461538461 21.06352087114338 92.76923076923077 13.941923774954624 110.92307692307692 13.949183303085302 129.07692307692307 14.087114337568059 147.23076923076923 6.646098003629756 165.3846153846154 6.5444646098003645 183.53846153846155 6.5009074410163326 201.69230769230768 6.39927404718693 219.84615384615384 6.246823956442827 238 2 238 22 2 22 2 22"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 0; fill-opacity: 0.2; fill: rgb(8, 180, 78); pointer-events: auto;">
+                              </polyline>
+                              <polyline
+                                points="2 22 20.153846153846153 21.891107078039926 38.30769230769231 21.7967332123412 56.46153846153846 21.310344827586206 74.61538461538461 21.06352087114338 92.76923076923077 13.941923774954624 110.92307692307692 13.949183303085302 129.07692307692307 14.087114337568059 147.23076923076923 6.646098003629756 165.3846153846154 6.5444646098003645 183.53846153846155 6.5009074410163326 201.69230769230768 6.39927404718693 219.84615384615384 6.246823956442827 238 2"
+                                style="stroke: rgb(20, 244, 111); stroke-width: 1; stroke-linejoin: round; stroke-linecap: round; fill: none;">
+                              </polyline>
+                            </g>
+                            <line x1="2" y1="22" x2="238" y2="22"
+                              style="stroke: rgb(155, 176, 167); stroke-opacity: 0.5; stroke-dasharray: 2, 2;"></line>
+                            <g>
+                              <circle cx="238" cy="2" r="2" style="fill: green;"></circle>
+                            </g>
+                          </svg></div>
+                      </div>
+                    </div>
+                    <div class="flex flex-col w-full md:w-[200px] gap-2">
+                      <div class="text-xs text-gray-20 leading-none">avg daily fees USD</div>
+                      <div class="text-xl text-white leading-none font-bold">$10.19</div>
+                    </div>
+                    <div class="flex flex-col w-full md:w-[200px] gap-2">
+                      <div class="text-xs text-gray-20 leading-none">avg daily fees ABC</div>
+                      <div class="text-xl text-white leading-none font-bold">$5.01</div>
+                    </div>
+                    <div class="flex flex-col w-full md:w-[200px] gap-2">
+                      <div class="text-xs text-gray-20 leading-none">avg daily fees XYZ</div>
+                      <div class="text-xl text-white leading-none font-bold">$5.18</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col md:flex-row gap-3 w-fit px-4 md:px-0"><button
+                    class="flex relative items-center justify-between bg-green-40 border border-green-30 text-gray-dark hover:bg-green-20 hover:border-green-20 disabled:bg-gray-dark disabled:border-green-90 disabled:text-green-70 disabled:cursor-not-allowed rounded-lgg h-7 w-fit">
+                    <div
+                      class="interact-button flex truncate relative w-full justify-start items-center pl-3 pr-3 font-bold leading-none text-sm justify-center">
+                      Create position</div>
+                  </button></div>
+              </div>
+            </div>
+            <div
+              class="flex flex-col md:flex-row w-full h-fit max-w-[1160px] mx-auto gap-10 justify-between items-center">
+              <div class="flex flex-col w-full gap-8">
+                <div class="flex flex-col w-full gap-3 px-4 md:px-0">
+                  <h2 class="text-white text-xl md:text-[28px] leading-8 md:leading-10 font-bold">Degens follow degens.
+                  </h2>
+                  <p class="interact-button text-xs md:text-sm text-gray-20">Explore positions and pools from other traders and discover
+                    new opportunities.<br class="no-visible-mobile">Learn from the boldest to stay ahead in the market.
+                  </p>
+                </div>
+                <div class="text-gray-30 text-xs no-visible-desktop pl-[28px]">Slide to see more info →</div>
+                <div class="flex flex-col min-w-[320px] overflow-x-scroll overflow-y-hidden md:overflow-visible
+                    md:min-w-[480px] relative z-[1] px-3 md:px-0">
+                  <div class="flex flex-col w-full md:w-auto relative gap-2 -mt-2">
+                    <div class="flex items-start justify-between bg-gray-100 md:sticky md:top-[52px] py-2 md:z-[11] text-xs
+                        text-gray-20 px-4 z-[10] w-[1200px] md:w-full">
+                      <div class="w-44 md:w-60 flex items-center text-left sticky left-1 bg-gradient-to-r from-gray-100 from-75%
+                          to-transparent md:bg-gray-100 md:static md:left-auto md:bg-transparent md:mr-0 before:content-['']
+                          before:block before:w-4 before:h-[14px] before:absolute before:-left-4 before:bg-gray-100
+                          md:before:hidden"><span class="text-gray-20">pool/fee tier</span></div>
+                      <div class="w-20 flex items-center justify-start"><a href="#/top-positions?sort=nft_id" class="text-gray-20 visited:text-gray-20 hover:text-white leading-none
+                                                              hover:no-underline">NFT id</a></div>
+                      <div class="w-16 flex items-center justify-center"><a href="#/top-positions?sort=nft_id" class="text-gray-20 visited:text-gray-20 hover:text-white leading-none
+                                                              hover:no-underline">owner</a></div>
+                      <div class="w-32 flex items-center justify-end"><a href="#/top-positions?sort=underlying_value"
+                          class="text-gray-20 visited:text-gray-20 hover:text-white
+                                                                        leading-none hover:no-underline">pool
+                          assets</a></div>
+                      <div class="w-32 flex items-center justify-end"><a href="#/top-positions?sort=pnl" class="text-gray-20 visited:text-gray-20 hover:text-white leading-none
+                                                           hover:no-underline">PnL</a></div>
+                      <div class="w-24 flex items-center justify-end"><a href="#/top-positions?sort=apr" class="text-gray-20 visited:text-gray-20 hover:text-white leading-none
+                                                           hover:no-underline">APR</a></div>
+                      <div class="w-20 flex items-center justify-end"><a href="#/top-positions?sort=fee_apr" class="text-gray-20 visited:text-gray-20 hover:text-white
+                                                               leading-none hover:no-underline">fee APR</a></div>
+                      <div class="w-[72px] flex items-center justify-end"><a href="#/top-positions?sort=age" class="text-gray-20 visited:text-gray-20 hover:text-white leading-none
+                                                           hover:no-underline">age</a></div>
+                    </div>
+                    <div class="flex flex-col gap-2 pr-4 md:p-0 w-[1200px] md:w-full">
+                      <div class="flex justify-between items-center h-16 md:h-10 px-4 rounded-lgg transition-all bg-gray-dark border
+                          border-gray-80 md:hover:bg-gray-90/50 md:hover:border-gray-70">
+                        <div
+                          class="bg-gradient-to-r from-gray-dark md:from-transparent before:bg-gray-dark
+                           md:before:bg-transparent flex sticky left-1 from-75% to-transparent before:content-['']
+                           before:block before:w-4 before:h-[58px] before:absolute before:-left-4 before:-top-[5px]
+                           before:z-index-5 before:rounded-l-[12px] md:static md:bg-transparent md:before:hidden w-44 md:w-60">
+                          <div class="flex flex-col md:flex-row gap-2 md:gap-3">
+                            <div class="flex flex-col md:flex-row items-start md:items-center gap-3">
+                              <div class="flex flex-col gap-1">
+                                <div class="flex flex-col gap-2">
+                                  <div
+                                    class="flex flex-row gap-1 items-baseline hover:no-underline text-white hover:text-green-20">
+                                    <span class="flex shrink-0 truncate font-bold text-base">WETH/USDC</span><span
+                                      class="text-sm font-normal leading-none text-gray-20">0.30%</span></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="flex gap-1"><img class="h-5" src="green-ethereum.svg"><img class="h-5"
+                                src="uniswap.svg"></div>
+                          </div>
+                        </div>
+                        <div class="flex justify-start w-20">
+                          <div
+                            class="text-sm text-green-40 visited:text-green-40 hover:text-green-20 leading-none hover:no-underline">
+                            861012</div>
+                        </div>
+                        <div class="flex justify-start w-16">
+                          <div
+                            class="text-sm text-green-40 visited:text-green-40 hover:text-green-20 leading-none hover:no-underline">
+                            0x3fbe</div>
+                        </div>
+                        <div class="flex justify-end w-32">
+                          <div class="text-sm text-white font-bold">$2,557.07</div>
+                        </div>
+                        <div class="flex justify-end w-32">
+                          <div class="text-sm font-bold text-green-20">$109.70</div>
+                        </div>
+                        <div class="flex justify-end w-24">
+                          <div class="text-sm font-bold text-green-20">656.5%</div>
+                        </div>
+                        <div class="flex justify-end w-20">
+                          <div class="text-sm text-white font-bold">735.1%</div>
+                        </div>
+                        <div class="flex justify-end w-[72px]">
+                          <div class="text-sm text-gray-10">20.5 d</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex flex-col gap-2 pr-4 md:p-0 w-[1200px] md:w-full">
+                      <div class="flex justify-between items-center h-16 md:h-10 px-4 rounded-lgg transition-all bg-gray-dark border
+                                       border-gray-80 md:hover:bg-gray-90/50 md:hover:border-gray-70">
+                        <div
+                          class="bg-gradient-to-r from-gray-dark md:from-transparent before:bg-gray-dark
+                           md:before:bg-transparent flex sticky left-1 from-75% to-transparent before:content-['']
+                           before:block before:w-4 before:h-[58px] before:absolute before:-left-4 before:-top-[5px]
+                           before:z-index-5 before:rounded-l-[12px] md:static md:bg-transparent md:before:hidden w-44 md:w-60">
+                          <div class="flex flex-col md:flex-row gap-2 md:gap-3">
+                            <div class="flex flex-col md:flex-row items-start md:items-center gap-3">
+                              <div class="flex flex-col gap-1">
+                                <div class="flex flex-col gap-2">
+                                  <div
+                                    class="flex flex-row gap-1 items-baseline hover:no-underline text-white hover:text-green-20">
+                                    <span class="flex shrink-0 truncate font-bold text-base">WBTC/WETH</span><span
+                                      class="text-sm font-normal leading-none text-gray-20">0.05%</span></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="flex gap-1"><img class="h-5" src="green-arbitrum.svg"><img class="h-5"
+                                src="uniswap.svg"></div>
+                          </div>
+                        </div>
+                        <div class="flex justify-start w-20">
+                          <div
+                            class="text-sm text-green-40 visited:text-green-40 hover:text-green-20 leading-none hover:no-underline">
+                            3410723</div>
+                        </div>
+                        <div class="flex justify-start w-16">
+                          <div
+                            class="text-sm text-green-40 visited:text-green-40 hover:text-green-20 leading-none hover:no-underline">
+                            0xa75c</div>
+                        </div>
+                        <div class="flex justify-end w-32">
+                          <div class="text-sm text-white font-bold">$35,590.54</div>
+                        </div>
+                        <div class="flex justify-end w-32">
+                          <div class="text-sm font-bold text-green-20">$110.78</div>
+                        </div>
+                        <div class="flex justify-end w-24">
+                          <div class="text-sm font-bold text-green-20">116.3%</div>
+                        </div>
+                        <div class="flex justify-end w-20">
+                          <div class="text-sm text-white font-bold">140.1%</div>
+                        </div>
+                        <div class="flex justify-end w-[72px]">
+                          <div class="text-sm text-gray-10">13.2 d</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex flex-col gap-2 pr-4 md:p-0 w-[1200px] md:w-full">
+                      <div class="flex justify-between items-center h-16 md:h-10 px-4 rounded-lgg transition-all bg-gray-dark border
+                            border-gray-80 md:hover:bg-gray-90/50 md:hover:border-gray-70">
+                        <div
+                          class="bg-gradient-to-r from-gray-dark md:from-transparent before:bg-gray-dark
+                           md:before:bg-transparent flex sticky left-1 from-75% to-transparent before:content-['']
+                           before:block before:w-4 before:h-[58px] before:absolute before:-left-4 before:-top-[5px
+                           before:z-index-5 before:rounded-l-[12px] md:static md:bg-transparent md:before:hidden w-44 md:w-60">
+                          <div class="flex flex-col md:flex-row gap-2 md:gap-3">
+                            <div class="flex flex-col md:flex-row items-start md:items-center gap-3">
+                              <div class="flex flex-col gap-1">
+                                <div class="flex flex-col gap-2">
+                                  <div
+                                    class="flex flex-row gap-1 items-baseline hover:no-underline text-white hover:text-green-20">
+                                    <span class="flex shrink-0 truncate font-bold text-base">WETH/OP</span><span
+                                      class="text-sm font-normal leading-none text-gray-20">1.00%</span></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="flex gap-1"><img class="h-5" src="green-optimism.svg"><img class="h-5"
+                                src="uniswap.svg"></div>
+                          </div>
+                        </div>
+                        <div class="flex justify-start w-20">
+                          <div
+                            class="text-sm text-green-40 visited:text-green-40 hover:text-green-20 leading-none hover:no-underline">
+                            973013</div>
+                        </div>
+                        <div class="flex justify-start w-16">
+                          <div
+                            class="text-sm text-green-40 visited:text-green-40 hover:text-green-20 leading-none hover:no-underline">
+                            0x6b1a</div>
+                        </div>
+                        <div class="flex justify-end w-32">
+                          <div class="text-sm text-white font-bold">$10,827.43</div>
+                        </div>
+                        <div class="flex justify-end w-32">
+                          <div class="text-sm font-bold text-green-20">$4,794.24</div>
+                        </div>
+                        <div class="flex justify-end w-24">
+                          <div class="text-sm font-bold text-green-20">33.62%</div>
+                        </div>
+                        <div class="flex justify-end w-20">
+                          <div class="text-sm text-white font-bold">35.58%</div>
+                        </div>
+                        <div class="flex justify-end w-[72px]">
+                          <div class="text-sm text-gray-10">804.8 d</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex flex-col gap-2 pr-4 md:p-0 w-[1200px] md:w-full">
+                      <div class="flex justify-between items-center h-16 md:h-10 px-4 rounded-lgg transition-all bg-gray-dark border
+                            border-gray-80 md:hover:bg-gray-90/50 md:hover:border-gray-70">
+                        <div
+                          class="bg-gradient-to-r from-gray-dark md:from-transparent before:bg-gray-dark
+                           md:before:bg-transparent flex sticky left-1 from-75% to-transparent before:content-['']
+                           before:block before:w-4 before:h-[58px] before:absolute before:-left-4 before:-top-[5px]
+                           before:z-index-5 before:rounded-l-[12px] md:static md:bg-transparent md:before:hidden w-44 md:w-60">
+                          <div class="flex flex-col md:flex-row gap-2 md:gap-3">
+                            <div class="flex flex-col md:flex-row items-start md:items-center gap-3">
+                              <div class="flex flex-col gap-1">
+                                <div class="flex flex-col gap-2">
+                                  <div
+                                    class="flex flex-row gap-1 items-baseline hover:no-underline text-white hover:text-green-20">
+                                    <span class="flex shrink-0 truncate font-bold text-base">WETH/DAI</span><span
+                                      class="text-sm font-normal leading-none text-gray-20">0.30%</span></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="flex gap-1"><img class="h-5" src="green-base.svg"><img class="h-5"
+                                src="uniswap.svg"></div>
+                          </div>
+                        </div>
+                        <div class="flex justify-start w-20">
+                          <div
+                            class="text-sm text-green-40 visited:text-green-40 hover:text-green-20 leading-none hover:no-underline">
+                            973013</div>
+                        </div>
+                        <div class="flex justify-start w-16">
+                          <div
+                            class="text-sm text-green-40 visited:text-green-40 hover:text-green-20 leading-none hover:no-underline">
+                            0x6b1a</div>
+                        </div>
+                        <div class="flex justify-end w-32">
+                          <div class="text-sm text-white font-bold">$27,193.17</div>
+                        </div>
+                        <div class="flex justify-end w-32">
+                          <div class="text-sm font-bold text-green-20">$210.61</div>
+                        </div>
+                        <div class="flex justify-end w-24">
+                          <div class="text-sm font-bold text-green-20">3.78%</div>
+                        </div>
+                        <div class="flex justify-end w-20">
+                          <div class="text-sm text-white font-bold">90.35%</div>
+                        </div>
+                        <div class="flex justify-end w-[72px]">
+                          <div class="text-sm text-gray-10">7.8 d</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col md:flex-row gap-3 w-fit px-4 md:px-0"><button
+                    class="flex relative items-center justify-between bg-green-40 border border-green-30 text-gray-dark hover:bg-green-20 hover:border-green-20 disabled:bg-gray-dark disabled:border-green-90 disabled:text-green-70 disabled:cursor-not-allowed rounded-lgg h-7 w-fit">
+                    <div
+                      class="interact-button flex truncate relative w-full justify-start items-center pl-3 pr-3 font-bold leading-none text-sm justify-center">
+                      Explore positions</div>
+                  </button></div>
+              </div>
+            </div>
+            <div
+              class="flex flex-col md:flex-row w-full h-fit max-w-[1160px] mx-auto gap-10 justify-between items-center">
+              <div class="flex flex-col w-full gap-8">
+                <div class="flex flex-col w-full gap-3 px-4 md:px-0">
+                  <h2 class="text-white text-xl md:text-[28px] leading-8 md:leading-10 font-bold">Don’t miss out on
+                    incentives</h2>
+                  <p class="text-xs md:text-sm text-gray-20">Uncover liquidity incentive programs and explore
+                    opportunities to earn rewards.</p>
+                </div>
+                <div class="text-gray-30 text-xs no-visible-desktop pl-[28px]">Slide to see more info →</div>
+                <div class="flex flex-col min-w-[320px] overflow-x-scroll overflow-y-hidden md:overflow-visible
+                          md:min-w-[480px] relative z-[1] px-3 md:px-0">
+                  <div class="flex flex-col w-full md:w-auto relative gap-2 -mt-2">
+                    <div class="flex items-start justify-between bg-gray-100 md:sticky md:top-[52px] py-2 md:z-[11] text-xs
+                              text-gray-20 px-4 z-[10] w-[1200px] md:w-full">
+                      <div
+                        class="flex items-center text-left sticky left-1 bg-gradient-to-r from-gray-100 from-75% to-transparent
+                          md:bg-gray-100 md:static md:left-auto md:bg-transparent md:mr-0 before:content-[''] before:block
+                          before:w-4 before:h-[12px] before:absolute before:-left-4 before:bg-gray-100 md:before:hidden w-52">
+                        pool/fee tier</div>
+                      <div class="w-36 flex items-center text-left">duration UTC time</div>
+                      <div class="w-36 justify-end flex items-center">pool TVL</div>
+                      <div class="w-24 justify-end flex items-center">vesting</div>
+                      <div class="w-24 justify-center flex items-center">reward token</div>
+                      <div class="w-44 justify-end flex items-center">total rewards</div>
+                      <div class="w-32 justify-end flex items-center">rewards_APR</div>
+                    </div>
+                    <div class="flex flex-col gap-2 pr-4 md:p-0 w-[1200px] md:w-full">
+                      <div
+                        class="flex flex-row justify-between items-center h-[64px] rounded-lgg bg-gray-dark border border-gray-80 transition-all md:hover:bg-gray-dark/50 md:hover:border-gray-70 px-4">
+                        <div
+                          class="flex sticky left-1 bg-gradient-to-r from-gray-dark from-75% to-transparent before:content-[''] before:block before:w-4 before:h-[60px] before:absolute before:-left-4 before:-top-[7px] before:z-index-5 before:rounded-l-[12px] before:bg-gray-dark md:static md:bg-transparent md:before:hidden w-52">
+                          <div class="flex flex-col gap-2">
+                            <div
+                              class="flex flex-row gap-1 items-baseline hover:no-underline text-white hover:text-green-20">
+                              <span
+                                class="flex shrink-0 truncate font-bold text-base leading-none">AZUR/WETH</span><span
+                                class="flex shrink-0 text-xs font-normal text-gray-20 leading-none"> 0.30%</span></div>
+                            <div class="flex items-center gap-3">
+                              <div class="flex items-center gap-2"><img src="green-ethereum.svg" class="w-5 h-5"><img
+                                  src="uniswap.svg" class="w-5 h-5"></div>
+                              <div
+                                class="bg-blue-80 text-white flex w-fit text-xs px-1.5 rounded-[5px] font-bold items-center h-[18px] uppercase">
+                                ACTIVE</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="w-36 text-white text-xs">
+                          <div class="flex flex-col gap-1"><span class="leading-none">19/JUN/2024 13:00</span><span
+                              class="leading-none">19/SEP/2024 13:00</span></div>
+                        </div>
+                        <div class="w-36 flex gap-1 justify-end"><span
+                            class="text-white text-sm leading-none font-bold">$3,163,246</span></div>
+                        <div class="w-24 flex justify-end"><span class="text-sm leading-none text-gray-30">0.0
+                            days</span></div>
+                        <div class="w-24 flex justify-center">
+                          <div class="flex h-6 items-center">
+                            <div class="flex items-center text-green-40 hover:text-green-20 text-sm !no-underline">AZUR
+                            </div>
+                          </div>
+                        </div>
+                        <div class="w-44 rewards-data">
+                          <div class="flex flex-col gap-1 w-full items-end">
+                            <div class="flex w-full font-bold text-sm text-white truncate justify-end leading-none">
+                              6,000,000 AZUR</div>
+                            <div class="flex text-xs text-gray-20 font-normal">approx $804,471.49</div>
+                          </div>
+                        </div>
+                        <div class="w-32 flex flex-col items-end ">
+                          <div class="flex flex-col gap-1 items-end"><span
+                              class="tetx-sm text-white font-bold leading-none">100.90%</span><span
+                              class="text-xs text-gray-20 leading-none font-normal">$364.34/hour</span></div>
+                        </div>
+                      </div>
+                      <div
+                        class="flex flex-row justify-between items-center h-[64px] rounded-lgg bg-gray-dark border border-gray-80 transition-all md:hover:bg-gray-dark/50 md:hover:border-gray-70 px-4">
+                        <div
+                          class="flex sticky left-1 bg-gradient-to-r from-gray-dark from-75% to-transparent before:content-[''] before:block before:w-4 before:h-[60px] before:absolute before:-left-4 before:-top-[7px] before:z-index-5 before:rounded-l-[12px] before:bg-gray-dark md:static md:bg-transparent md:before:hidden w-52">
+                          <div class="flex flex-col gap-2">
+                            <div
+                              class="flex flex-row gap-1 items-baseline hover:no-underline text-white hover:text-green-20">
+                              <span
+                                class="flex shrink-0 truncate font-bold text-base leading-none">WETH/FARTHER</span><span
+                                class="flex shrink-0 text-xs font-normal text-gray-20 leading-none"> 0.30%</span></div>
+                            <div class="flex items-center gap-3">
+                              <div class="flex items-center gap-2"><img src="green-base.svg" class="w-5 h-5"><img
+                                  src="uniswap.svg" class="w-5 h-5"></div>
+                              <div
+                                class="bg-blue-80 text-white flex w-fit text-xs px-1.5 rounded-[5px] font-bold items-center h-[18px] uppercase">
+                                ACTIVE</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="w-36 text-white text-xs">
+                          <div class="flex flex-col gap-1"><span class="leading-none">1/MAY/2024 00:00</span><span
+                              class="leading-none">28/OCT/2024 00:00</span></div>
+                        </div>
+                        <div class="w-36 flex gap-1 justify-end"><span
+                            class="text-white text-sm leading-none font-bold">$46,684</span></div>
+                        <div class="w-24 flex justify-end"><span class="text-sm leading-none text-gray-30">0.0
+                            days</span></div>
+                        <div class="w-24 flex justify-center">
+                          <div class="flex h-6 items-center">
+                            <div class="flex items-center text-green-40 hover:text-green-20 text-sm !no-underline">
+                              FARTHER</div>
+                          </div>
+                        </div>
+                        <div class="w-44 rewards-data">
+                          <div class="flex flex-col gap-1 w-full items-end">
+                            <div class="flex w-full font-bold text-sm text-white truncate justify-end leading-none">
+                              50,000,000 FARTHER</div>
+                            <div class="flex text-xs text-gray-20 font-normal">approx $42,924.94</div>
+                          </div>
+                        </div>
+                        <div class="w-32 flex flex-col items-end ">
+                          <div class="flex flex-col gap-1 items-end"><span
+                              class="text-sm text-white font-bold leading-none">186.45%</span><span
+                              class="text-xs text-gray-20 leading-none font-normal">$9.94/hour</span></div>
+                        </div>
+                      </div>
+                      <div
+                        class="flex flex-row justify-between items-center h-[64px] rounded-lgg bg-gray-dark border border-gray-80 transition-all md:hover:bg-gray-dark/50 md:hover:border-gray-70 px-4">
+                        <div
+                          class="flex sticky left-1 bg-gradient-to-r from-gray-dark from-75% to-transparent before:content-[''] before:block before:w-4 before:h-[60px] before:absolute before:-left-4 before:-top-[7px] before:z-index-5 before:rounded-l-[12px] before:bg-gray-dark md:static md:bg-transparent md:before:hidden w-52">
+                          <div class="flex flex-col gap-2">
+                            <div
+                              class="flex flex-row gap-1 items-baseline hover:no-underline text-white hover:text-green-20">
+                              <span
+                                class="flex shrink-0 truncate font-bold text-base leading-none">WMATIC/BONSAI</span><span
+                                class="flex shrink-0 text-xs font-normal text-gray-20 leading-none"> 0.30%</span></div>
+                            <div class="flex items-center gap-3">
+                              <div class="flex items-center gap-2"><img src="green-polygon.svg" class="w-5 h-5"><img
+                                  src="uniswap.svg" class="w-5 h-5"></div>
+                              <div
+                                class="bg-blue-80 text-white flex w-fit text-xs px-1.5 rounded-[5px] font-bold items-center h-[18px] uppercase">
+                                ACTIVE</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="w-36 text-white text-xs">
+                          <div class="flex flex-col gap-1"><span class="leading-none">9/AUG/2024 13:14</span><span
+                              class="leading-none">7/NOV/2024 13:14</span></div>
+                        </div>
+                        <div class="w-36 flex gap-1 justify-end"><span
+                            class="text-white text-sm leading-none font-bold">$142,320</span></div>
+                        <div class="w-24 flex justify-end"><span class="text-sm leading-none text-gray-30">0.0
+                            days</span></div>
+                        <div class="w-24 flex justify-center">
+                          <div class="flex h-6 items-center">
+                            <div class="flex items-center text-green-40 hover:text-green-20 text-sm !no-underline">
+                              BONSAI</div>
+                          </div>
+                        </div>
+                        <div class="w-44 rewards-data">
+                          <div class="flex flex-col gap-1 w-full items-end">
+                            <div class="flex w-full font-bold text-sm text-white truncate justify-end leading-none">
+                              2,000,000 BONSAI</div>
+                            <div class="flex text-xs text-gray-20 font-normal">approx $17,778.50</div>
+                          </div>
+                        </div>
+                        <div class="w-32 flex flex-col items-end ">
+                          <div class="flex flex-col gap-1 items-end"><span
+                              class="tetx-sm text-white font-bold leading-none">50.66%</span><span
+                              class="text-xs text-gray-20 leading-none font-normal">$8.23/hour</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col md:flex-row gap-3 w-fit px-4 md:px-0"><button
+                    class="flex relative items-center justify-between bg-green-40 border border-green-30 text-gray-dark hover:bg-green-20 hover:border-green-20 disabled:bg-gray-dark disabled:border-green-90 disabled:text-green-70 disabled:cursor-not-allowed rounded-lgg h-7 w-fit">
+                    <div
+                      class="interact-button flex truncate relative w-full justify-start items-center pl-3 pr-3 font-bold leading-none text-sm justify-center">
+                      Explore incentives</div>
+                  </button></div>
+              </div>
+            </div>
+            <div class="flex flex-col w-full h-fit max-w-[1160px] mx-auto gap-12 px-4 md:px-0">
+              <div class="flex flex-col gap-6">
+                <div class="flex flex-col gap-3"><span
+                    class="flex w-fit h-fit px-2 py-[3px] bg-green-30 text-sm text-gray-dark font-bold rounded-[5px] leading-none mb-5">REVERT’S
+                    KEY COLLABORATORS</span>
+                  <h2 class="text-white text-xl md:text-2xl leading-[28px] md:leading-[32px] font-bold">Our investors.
+                  </h2>
+                  <p class="text-xs md:text-sm text-gray-20 max-w-[840px]">Revert was started in 2021 and we raised a
+                    seed round with Fintech Collective and Encode
+                    as our lead investors.</p>
+                </div>
+                <div class="flex flex-wrap md:flex-row gap-x-8 gap-y-4 md:gap-20 items-center md:h-[60px]"><a
+                    href="https://fintech.io/portfolio" target="_blank"><img src="fintech-collective-logo.png"
+                      class="w-[200px] h-[14px] md:w-[250px] md:h-[17px]" alt="Fintech Collective logotype"></a><a
+                    href="https://www.encode.club/" target="_blank"><img src="encode-club-logo.png"
+                      class="w-[86px] h-[90px] md:w-[110px] md:h-[115px]" alt="Encode Club logotype"></a><a
+                    href="https://nexo.com/" target="_blank"><img src="nexo.svg"
+                      class="w-[130px] h-[26px] md:w-40 md:h-8" alt="Nexo logotype"></a><a
+                    href="https://www.daedalus.gg/" target="_blank"><img src="daedalus.png"
+                      class="w-[129px] h-[34px] md:h-[40px] md:w-[151px]" alt="Encode Club logotype"></a></div>
+              </div>
+              <div class="flex flex-col gap-6">
+                <div class="flex flex-col gap-3">
+                  <h2 class="text-white text-xl md:text-2xl leading-[28px] md:leading-[32px] font-bold">Partnerships.
+                  </h2>
+                  <p class="text-xs md:text-sm text-gray-20 max-w-[840px]">Collaborations with industry leaders and key
+                    organizations enable us to unlock new opportunities and value for our users.</p>
+                </div>
+                <div class="flex flex-wrap md:flex-row gap-x-12 gap-y-6 md:gap-20 items-center"><a
+                    href="https://arbitrum.foundation/" target="_blank"><img src="arbitrum-foundation.png"
+                      class="w-[141px] h-[36px] md:w-[165px] md:h-[42px]" alt="Arbitrum Foundation"></a><a
+                    href="https://optimism.io/" target="_blank"><img src="optimism-white.png"
+                      class="w-[120px] h-4 md:w-[150px] md:h-5" alt="Optimism"></a><a href="https://polygon.technology/"
+                    target="_blank"><img src="polygon-logo.png" class="w-[123px] h-[24px] md:w-[154px] md:h-[30px]"
+                      alt="Polygon"></a><a href="https://www.uniswapfoundation.org/" target="_blank"><img
+                      src="uniswap-foundation.png" class="w-[137px] h-8 md:w-[163px] md:h-[38px]" alt="Optimism"></a>
+                </div>
+              </div>
+              <div class="flex flex-col gap-6">
+                <div class="flex flex-col gap-3">
+                  <h2 class="text-white text-xl md:text-2xl leading-[28px] md:leading-[32px] font-bold">Security first.
+                  </h2>
+                  <p class="text-xs md:text-sm text-gray-20 max-w-[840px]">All of our smart contracts undergo rigorous
+                    audits by leading security firms.</p>
+                </div>
+                <div class="flex flex-wrap md:flex-row gap-8 md:gap-20 items-center"><a href="https://code4rena.com/"
+                    target="_blank"><img src="code4arena.png" class="w-[144px] h-7 md:w-[185px] md:h-9"
+                      alt="Code4arena"></a><a href="https://peckshield.com/" target="_blank"><img src="peckshield.png"
+                      class="w-[130px] h-7 md:w-[167px] md:h-9" alt="Peckshield"></a><a href="https://hydnsec.com/"
+                    target="_blank"><img src="hydn.png" class="w-28 h-5 md:w-[124px] md:h-[22px]"
+                      alt="HYDN security"></a></div>
+              </div>
+            </div>
+            <div class="flex flex-col w-full h-fit max-w-[1160px] mx-auto gap-6">
+              <div class="flex flex-col gap-3 px-4 md:px-0"><span
+                  class="flex w-fit h-fit px-2 py-[3px] bg-green-30 text-sm text-gray-dark font-bold rounded-[5px] leading-none mb-5">WHAT'S
+                  NEW ON REVERT?</span>
+                <h2 class="text-white text-base md:text-xl leading-none font-bold">Discover what’s new on our blog.</h2>
+              </div>
+              <div
+                class="flex flex-col gap-8 px-4 py-6 md:p-8 md:rounded-[20px] bg-gray-dark border border-gray-80 md:-mx-8">
+                <div class="flex flex-col gap-1">
+                  <div class="flex flex-col md:flex-row gap-2 md:gap-8 md:items-baseline"><a
+                      href="https://mirror.xyz/revertfinance.eth/ER1MIjVVwZPK9Bbp0Ir1gVDkn3PXxH4pA77Q4H964Xg"
+                      target="_blank"
+                      class="text-sm md:text-base text-green-40 font-bold hover:text-green-20 hover:no-underline">Run
+                      your own Revert Lend liquidation bot</a><span class="text-sm text-gray-20">14/OCT/2024</span>
+                  </div>
+                  <div class="flex text-xs md:text-sm text-white md:pl-5 max-w-[920px]">We invite everyone interested to
+                    join us in strengthening the Revert Lend ecosystem. By running your own liquidation bot, you
+                    not only contribute to the stability and decentralization of the protocol but also have the
+                    opportunity to earn liquidation fees ranging from 2% to 8%.
+                    Whether you’re a developer looking to dive into the code or an operator ready to set up your own
+                    bot, your participation is valuable.</div>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <div class="flex flex-col md:flex-row gap-2 md:gap-8 md:items-baseline"><a
+                      href="https://mirror.xyz/revertfinance.eth/oezEn5uDGEBTrKPF0Wk2vEwtg-yyqdpCuQlz3Ca1oFM"
+                      target="_blank"
+                      class="text-sm md:text-base text-green-40 font-bold hover:text-green-20 hover:no-underline">Why
+                      the future needs AMMs</a><span class="text-sm text-gray-20">21/FEB/2024</span></div>
+                  <div class="flex text-xs md:text-sm text-white md:pl-5 max-w-[920px]">The future demands a
+                    hyper-financialized world where decentralized markets trade a plethora of crypto tokens. These
+                    tokens represent everything from fractionalized art and real-state rights, to a myriad of fully
+                    digital assets, from
+                    in-game...</div>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <div class="flex flex-col md:flex-row gap-2 md:gap-8 md:items-baseline"><a
+                      href="https://mirror.xyz/revertfinance.eth/OpeiVCne7xsCAIYFwWTYPtBDAoMdb4JjLP8ixtvCbfM"
+                      target="_blank"
+                      class="text-sm md:text-base text-green-40 font-bold hover:text-green-20 hover:no-underline">Introducing
+                      Auto-Exit and Auto-Range</a><span class="text-sm text-gray-20">25/JUL/2023</span></div>
+                  <div class="flex text-xs md:text-sm text-white md:pl-5 max-w-[920px]">Hello LPs! We are thrilled to
+                    introduce two transformative features to the Revert toolkit, enhancing your LP experience
+                    on Uniswap v3: Auto-Exit and Auto-Range. These features have been meticulously crafted to streamline
+                    your liquidity
+                    provision and protect your investments.</div>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <div class="flex flex-col md:flex-row gap-2 md:gap-8 md:items-baseline"><a
+                      href="https://mirror.xyz/revertfinance.eth/oz6Qg2Ceg0z3F-TwoaeeS5ucNQqw9h30CiccMnVhEG8"
+                      target="_blank"
+                      class="text-sm md:text-base text-green-40 font-bold hover:text-green-20 hover:no-underline">Evmos
+                      Blast Off: Milestones in Our Cosmic Journey</a><span
+                      class="text-sm text-gray-20">12/MAY/2023</span></div>
+                  <div class="flex text-xs md:text-sm text-white md:pl-5 max-w-[920px]">Evmos, a proof-of-stake
+                    blockchain built on the Cosmos SDK, offers full Ethereum compatibility. Within this ecosystem,
+                    Forge, a CLMM DEX forked from Uniswap v3, recently launched on Evmos. This followed the Evmos DAO's
+                    approval of a grant proposal for Revert's integration with Forge.</div>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <div class="flex flex-col md:flex-row gap-2 md:gap-8 md:items-baseline"><a
+                      href="https://mirror.xyz/revertfinance.eth/d3Fn5KJZ3xeg0NSZadSyP6mkLWHRbbftURH2iBariS0"
+                      target="_blank"
+                      class="text-sm md:text-base text-green-40 font-bold hover:text-green-20 hover:no-underline">V3Utils
+                      is back!</a><span class="text-sm text-gray-20">21/MAR/2023</span></div>
+                  <div class="flex text-xs md:text-sm text-white md:pl-5 max-w-[920px]">We are delighted to announce
+                    that our V3Utils contract has undergone a comprehensive audit by Peckshield, resulting in
+                    its redeployment with enhanced security measures.</div>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <div class="flex flex-col md:flex-row gap-2 md:gap-8 md:items-baseline"><a
+                      href="https://mirror.xyz/revertfinance.eth/_FfxBuW7iNwyJZuM796J3rHzRQ4wOYdAck3nWqqcoIE"
+                      target="_blank"
+                      class="text-sm md:text-base text-green-40 font-bold hover:text-green-20 hover:no-underline">150K
+                      MATIC accelerating Compoundor growth on Polygon</a><span
+                      class="text-sm text-gray-20">05/DEC/2022</span></div>
+                  <div class="flex text-xs md:text-sm text-white md:pl-5 max-w-[920px]">Over the next four weeks, we'll
+                    be distributing a total of 150,000 MATIC to incentivize the growth of auto-compounding and Uniswap
+                    v3 liquidity on Polygon.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex w-full h-[260px] md:h-[104px] bg-gray-100 items-center relative border-t border-t-gray-80 pb-10 md:pb-6">
+            <div class="flex flex-col md:flex-row w-full h-fit md:h-4 px-4 md:px-8 items-start justify-between gap-10">
+              <div
+                class="flex w-fit items-start md:items-baseline gap-5 md:gap-10 text-gray-20 text-[11px] relative text-xs">
+                <img src="logo-mini.svg" class="h-4" alt="Revert logotype small version"><span>REVERT © 2025 | ALL
+                  RIGHTS RESERVED</span></div>
+              <div
+                class="flex flex-wrap gap-y-5 gap-x-4 md:gap-6 md:justify-end text-gray-20 text-xs uppercase order-first md:order-last">
+                <div class="w-1/4 md:w-fit text-left no-visible-desktop"><a class="hover:text-white hover:no-underline"
+                    href="https://docs.revert.finance/">Docs</a></div>
+                <div class="w-1/4 md:w-fit text-left no-visible-desktop"><a class="hover:text-white hover:no-underline"
+                    href="https://twitter.com/revertfinance" target="_blank">Twitter</a></div>
+                <div class="w-1/4 md:w-fit text-left no-visible-desktop"><a class="hover:text-white hover:no-underline"
+                    href="https://discord.gg/HXfxKHrRmf" target="_blank">Discord</a></div>
+                <div class="w-1/4 md:w-fit text-left no-visible-desktop"><a class="hover:text-white hover:no-underline"
+                    href="https://t.me/revert_finance" target="_blank">Telegram</a></div>
+                <div class="w-1/4 md:w-fit text-left no-visible-desktop"><a class="hover:text-white hover:no-underline"
+                    href="https://39z6rhwtqhg.typeform.com/to/lwaHfAn7" target="_blank">Support</a></div>
+                <div class="w-1/4 md:w-fit text-left no-visible-desktop"><a class="hover:text-white hover:no-underline"
+                    href="https://github.com/revert-finance" target="_blank">Github</a></div>
+                <div class="w-1/4 md:w-fit text-left"><a class="hover:text-white hover:no-underline"
+                    href="#/terms">Terms</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="foot-bottom flex fixed bottom-0 border-t border-t-gray-70 h-10 md:h-6 w-full bg-gray-dark items-center
+                    justify-between z-[12] text-gray-30 left-0 pb-4 md:pb-0">
+            <div class="hidden md:flex h-full shrink-0 w-2/5 md:w-fit justify-center text-[11px] border-r border-r-gray-70
+                     items-center">
+              <div class="flex h-full md:px-4 border-r border-r-gray-70 items-center">REVERT v.d2c219a</div>
+              <div class="flex gap-4 no-visible-mobile md:px-4"><a
+                  class="no-visible-mobile hover:text-white hover:no-underline transition-all visited:text-gray-30 focus:text-gray-30"
+                  href="https://docs.revert.finance/" target="_blank">DOCS</a><a
+                  class="no-visible-mobile hover:text-white hover:no-underline transition-all visited:text-gray-30 focus:text-gray-30"
+                  href="https://twitter.com/revertfinance" target="_blank">TWITTER</a><a
+                  class="no-visible-mobile hover:text-white hover:no-underline transition-all visited:text-gray-30 focus:text-gray-30"
+                  href="https://discord.gg/HXfxKHrRmf" target="_blank">DISCORD</a><a
+                  class="no-visible-mobile hover:text-white hover:no-underline transition-all visited:text-gray-30 focus:text-gray-30"
+                  href="https://t.me/revert_finance" target="_blank">TELEGRAM</a><a
+                  class="no-visible-mobile hover:text-white hover:no-underline transition-all visited:text-gray-30 focus:text-gray-30"
+                  href="https://github.com/revert-finance" target="_blank">GITHUB</a><a
+                  class="no-visible-mobile hover:text-white hover:no-underline transition-all visited:text-gray-30 focus:text-gray-30"
+                  href="https://39z6rhwtqhg.typeform.com/to/lwaHfAn7" target="_blank">SUPPORT</a></div>
+            </div>
+            <div class="flex w-full md:w-fit">
+              <div class="relative flex shrink-0 cursor-pointer basis-[42%] md:basis-auto">
+                <div
+                  class="flex w-full md:w-fit justify-center text-[11px] leding-none uppercase px-3 md:px-5 h-6
+                              items-center gap-1.5 md:gap-2 md:border-l md:border-l-gray-70 cursor-pointer hover:bg-gray-90">
+                  BLOCK<div class="h-1.5 w-1.5 rounded shrink-0 bg-green-40"></div>
+                </div>
+              </div>
+              <div class="flex text-[11px] leding-none uppercase px-3 md:px-5 h-6 items-center gap-2 border-l border-l-gray-70
+                      basis-[58%] md:basis-auto justify-center">ethereum <span
+                  class="text-sm text-gray-20 material-symbols-sharp">speed</span>9.332 GWEI</div>
+            </div>
+          </div>
+        </div>
+        <div class="Toastify"></div>
+      </div>
+    </div>
+  </div><input type="text" name="history_state0" id="history_state0" style="display:none" value=""><iframe
+    id="verify-api" src="index_1.html" style="display: none;"></iframe><wcm-modal
+    data-scrapbook-adoptedstylesheets="0,1"
+    data-scrapbook-shadowdom="<!----><wcm-explorer-context data-scrapbook-shadowdom=&quot;<!---->&quot;></wcm-explorer-context><wcm-theme-context data-scrapbook-shadowdom=&quot;<!---->&quot;></wcm-theme-context><div id=&quot;wcm-modal&quot; role=&quot;alertdialog&quot; aria-modal=&quot;true&quot; class=&quot; wcm-overlay &quot;><div class=&quot;wcm-container&quot; tabindex=&quot;0&quot;><!--?lit$240055064$--></div></div>"></wcm-modal>
+  <script
+    data-scrapbook-elem="basic-loader">(function () { var k1 = "data-scrapbook-shadowdom", k2 = "data-scrapbook-canvas", k3 = "data-scrapbook-input-indeterminate", k4 = "data-scrapbook-input-checked", k5 = "data-scrapbook-option-selected", k6 = "data-scrapbook-input-value", k7 = "data-scrapbook-textarea-value", k8 = "data-scrapbook-adoptedstylesheets", k9 = /^data-scrapbook-adoptedstylesheet-(\d+)$/, k10 = "data-scrapbook-shadowdom-mode", k11 = "data-scrapbook-shadowdom-clonable", k12 = "data-scrapbook-shadowdom-delegates-focus", k13 = "data-scrapbook-shadowdom-serializable", k14 = "data-scrapbook-shadowdom-slot-assignment", k15 = "data-scrapbook-slot-assigned", k16 = "data-scrapbook-slot-index", k17 = /^scrapbook-slot-index=(\d+)$/; k18 = '/scrapbook-slot-index'; d = document, r = d.documentElement, $s = !!r.attachShadow, $as = !!d.adoptedStyleSheets, $c = !!window.HTMLCanvasElement, $sa = !!d.createElement('slot').assign, sle = [], sls = [], slt = function (r) { if ($sa) { var E = r.childNodes, i, e, s, m; for (i = 0; i < E.length; i++) { e = E[i]; if (e.nodeType === 8) { s = e.nodeValue; if (m = s.match(k17)) { s = e.nextSibling; if (s.nodeType === 3) { sls[m[1]] = s; } r.removeChild(e); i--; } else if (s === k18) { r.removeChild(e); i--; } } } } }, sl = function () { var i = sle.length, j, d, e; while (i--) { d = sle[i]; e = d.elem; d = d.value.split(','); j = d.length; while (j--) { d[j] = sls[parseInt(d[j], 10)]; } try { e.assign.apply(e, d); } catch (ex) { console.error(ex); } } }, asl = (function (r) { var l = [], E, i, e, m, c, j; if ($as) { E = r.attributes; i = E.length; while (i--) { e = E[i]; if (!(m = e.nodeName.match(k9))) { continue; } c = l[m[1]] = new CSSStyleSheet(); r.removeAttribute(m[0]); m = e.nodeValue.split('\n\n'); j = m.length; while (j--) { try { m[j] && c.insertRule(m[j]); } catch (ex) { console.error(ex); } } } } return l; })(r), as = function (d, e) { var l, i, I; if ($as && (l = e.getAttribute(k8)) !== null) { l = l.split(','); for (i = 0, I = l.length; i < I; i++) { d.adoptedStyleSheets.push(asl[l[i]]); } e.removeAttribute(k8); } }, fn = function (r) { var E = r.querySelectorAll ? r.querySelectorAll("*") : r.getElementsByTagName("*"), i = E.length, e, d, s, m; while (i--) { e = E[i]; s = e.shadowRoot; if ($s && (d = e.getAttribute(k1))) { if (!s) { try { s = e.attachShadow({ mode: (m = e.getAttribute(k10)) !== null ? m : 'open', clonable: e.hasAttribute(k11), delegatesFocus: e.hasAttribute(k12), serializable: e.hasAttribute(k13), slotAssignment: (m = e.getAttribute(k14)) !== null ? m : void (0), }); s.innerHTML = d; } catch (ex) { console.error(ex); } } e.removeAttribute(k1); e.removeAttribute(k10); e.removeAttribute(k11); e.removeAttribute(k12); e.removeAttribute(k13); e.removeAttribute(k14); } if ($c && (d = e.getAttribute(k2)) !== null) { (function () { var c = e, g = new Image(); g.onload = function () { c.getContext('2d').drawImage(g, 0, 0); }; g.src = d; })(); e.removeAttribute(k2); } if ((d = e.getAttribute(k3)) !== null) { e.indeterminate = true; e.removeAttribute(k3); } if ((d = e.getAttribute(k4)) !== null) { e.checked = d === 'true'; e.removeAttribute(k4); } if ((d = e.getAttribute(k5)) !== null) { e.selected = d === 'true'; e.removeAttribute(k5); } if ((d = e.getAttribute(k6)) !== null) { e.value = d; e.removeAttribute(k6); } if ((d = e.getAttribute(k7)) !== null) { e.value = d; e.removeAttribute(k7); } if ($sa && (d = e.getAttribute(k15)) !== null) { sle.push({ elem: e, value: d }); e.removeAttribute(k15); } if ($sa && (d = e.getAttribute(k16)) !== null) { sls[d] = e; e.removeAttribute(k16); } if (s) { slt(e); as(s, e); fn(s); } } }; as(d, r); fn(d); sl(); })()</script>
+</body>
+
+</html>
